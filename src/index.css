@@ -1,0 +1,7 @@
+/* index.html only: glass caption pill on the studio panel visual */
+
+.glass-caption {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}

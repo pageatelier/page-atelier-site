@@ -1,0 +1,63 @@
+/* works.html only: frosted "next up" cards + the mock-site browser-frame mockups */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.browser-frame {
+  background: #faf9f5;
+  box-shadow: 0 22px 48px rgba(24, 33, 38, 0.18);
+}
+
+.browser-bar {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.browser-dot {
+  background: rgba(24, 33, 38, 0.22);
+}
+
+.mock-site--uptome {
+  color: #17283e;
+  background: #f4f1e9;
+}
+
+.mock-site--sydney {
+  color: #3b2c1e;
+  background: #f3eee4;
+}
+
+.mock-site--atelier {
+  color: #182126;
+  background: #f3f0e9;
+}
+
+.mock-hero::before {
+  content: '';
+  position: absolute;
+  inset: 8% 8% 0;
+  border-radius: 48% 48% 0 0;
+  opacity: 0.9;
+}
+
+.mock-site--uptome .mock-hero::before {
+  background: linear-gradient(160deg, #82928a, #d7b99f 56%, #e9ded0);
+}
+
+.mock-site--sydney .mock-hero::before {
+  background: linear-gradient(160deg, #38291f, #9a7653 55%, #d9c4a7);
+}
+
+.mock-site--atelier .mock-hero::before {
+  background: linear-gradient(160deg, #a7c0ca, #ecf1f1 56%, #eee9df);
+}
+
+.mock-strip span {
+  background: rgba(24, 33, 38, 0.1);
+}
+
+.mock-strip span:nth-child(2) {
+  background: rgba(24, 33, 38, 0.18);
+}
