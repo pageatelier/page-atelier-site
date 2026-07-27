@@ -42,7 +42,19 @@
   });
 
   const kakaoFloat = document.querySelector('.kakao-float');
-  if (kakaoFloat) {
+  const heroSection = document.querySelector('#main > section');
+
+  if (kakaoFloat && heroSection && 'IntersectionObserver' in window) {
+    // Stay hidden while the hero (and its own CTAs) are on screen, so the
+    // floating button never overlaps them; appear once scrolled past it.
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        kakaoFloat.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+
+    heroObserver.observe(heroSection);
+  } else if (kakaoFloat) {
     const SHOW_AFTER = 200;
     let ticking = false;
 
