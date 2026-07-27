@@ -5,6 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:html && npm run build:css",
+    "build:html": "node scripts/build-html.js",
     "build:css": "npm run build:css:common && npm run build:css:index && npm run build:css:works && npm run build:css:services && npm run build:css:contact",
     "build:css:common": "tailwindcss -i ./src/common.css -o ./common.css",
     "build:css:index": "tailwindcss -i ./src/index.css -o ./index.css",

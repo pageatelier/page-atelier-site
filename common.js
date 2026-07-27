@@ -40,4 +40,23 @@
   yearNodes.forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
+
+  const kakaoFloat = document.querySelector('.kakao-float');
+  if (kakaoFloat) {
+    const SHOW_AFTER = 200;
+    let ticking = false;
+
+    const syncVisibility = () => {
+      kakaoFloat.classList.toggle('is-visible', window.scrollY > SHOW_AFTER);
+      ticking = false;
+    };
+
+    syncVisibility();
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(syncVisibility);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 })();
