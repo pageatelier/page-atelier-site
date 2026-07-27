@@ -1094,6 +1094,10 @@ body::before {
   width: 100vw;
 }
 
+.min-w-0{
+  min-width: 0px;
+}
+
 .min-w-\[320px\]{
   min-width: 320px;
 }
@@ -1346,6 +1350,10 @@ body::before {
 
 .whitespace-nowrap{
   white-space: nowrap;
+}
+
+.break-words{
+  overflow-wrap: break-word;
 }
 
 .rounded-\[18px\]{
