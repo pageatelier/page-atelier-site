@@ -1,0 +1,12 @@
+node_modules/
+**/node_modules/
+.git/
+**/.git/
+src/
+.DS_Store
+.wrangler/
+package.json
+package-lock.json
+postcss.config.js
+tailwind.config.js
+README.md
