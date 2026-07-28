@@ -841,10 +841,6 @@ body::before {
   margin-bottom: 0.5rem;
 }
 
-.mb-4{
-  margin-bottom: 1rem;
-}
-
 .mb-6{
   margin-bottom: 1.5rem;
 }
@@ -937,16 +933,8 @@ body::before {
   margin-top: 42px;
 }
 
-.mt-\[58px\]{
-  margin-top: 58px;
-}
-
 .mt-\[5px\]{
   margin-top: 5px;
-}
-
-.mt-\[62px\]{
-  margin-top: 62px;
 }
 
 .mt-\[clamp\(38px\2c 6vw\2c 84px\)\]{
@@ -1055,10 +1043,6 @@ body::before {
 
 .min-h-\[150px\]{
   min-height: 150px;
-}
-
-.min-h-\[290px\]{
-  min-height: 290px;
 }
 
 .min-h-\[440px\]{
@@ -1236,10 +1220,6 @@ body::before {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-\[1\.1fr_0\.9fr\]{
@@ -1503,17 +1483,8 @@ body::before {
   border-width: 0px;
 }
 
-.border-y{
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
 .border-b{
   border-bottom-width: 1px;
-}
-
-.border-r{
-  border-right-width: 1px;
 }
 
 .border-t{
@@ -1710,11 +1681,6 @@ body::before {
   padding-right: 23px;
 }
 
-.px-\[26px\]{
-  padding-left: 26px;
-  padding-right: 26px;
-}
-
 .px-gutter{
   padding-left: clamp(22px, 5vw, 78px);
   padding-right: clamp(22px, 5vw, 78px);
@@ -1866,10 +1832,6 @@ body::before {
   padding-top: 150px;
 }
 
-.pt-\[26px\]{
-  padding-top: 26px;
-}
-
 .pt-\[7px\]{
   padding-top: 7px;
 }
@@ -1957,10 +1919,6 @@ body::before {
 
 .text-\[clamp\(2rem\2c 3\.3vw\2c 4rem\)\]{
   font-size: clamp(2rem, 3.3vw, 4rem);
-}
-
-.text-\[clamp\(2rem\2c 3\.4vw\2c 3\.9rem\)\]{
-  font-size: clamp(2rem, 3.4vw, 3.9rem);
 }
 
 .text-\[clamp\(3\.2rem\2c 5\.9vw\2c 6\.8rem\)\]{
@@ -2765,14 +2723,6 @@ body::before {
     justify-self: end;
   }
 
-  .max-\[980px\]\:border-b{
-    border-bottom-width: 1px;
-  }
-
-  .max-\[980px\]\:border-r-0{
-    border-right-width: 0px;
-  }
-
   .max-\[980px\]\:pt-\[132px\]{
     padding-top: 132px;
   }
@@ -2827,10 +2777,6 @@ body::before {
     margin-left: 10vw;
   }
 
-  .max-\[680px\]\:mt-10{
-    margin-top: 2.5rem;
-  }
-
   .max-\[680px\]\:mt-8{
     margin-top: 2rem;
   }
@@ -2861,10 +2807,6 @@ body::before {
 
   .max-\[680px\]\:min-h-0{
     min-height: 0px;
-  }
-
-  .max-\[680px\]\:min-h-\[230px\]{
-    min-height: 230px;
   }
 
   .max-\[680px\]\:min-h-\[390px\]{
@@ -2957,14 +2899,6 @@ body::before {
 
   .max-\[680px\]\:rounded-xl{
     border-radius: 0.75rem;
-  }
-
-  .max-\[680px\]\:border-b{
-    border-bottom-width: 1px;
-  }
-
-  .max-\[680px\]\:border-r-0{
-    border-right-width: 0px;
   }
 
   .max-\[680px\]\:p-3\.5{
