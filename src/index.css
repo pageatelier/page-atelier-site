@@ -5,3 +5,8 @@
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
+
+/* Hero fade-on-scroll target — set via index.js, transform/opacity only */
+.hero-scroll-fade {
+  will-change: transform, opacity;
+}

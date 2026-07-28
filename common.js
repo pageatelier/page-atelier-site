@@ -1,4 +1,43 @@
 (() => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Smooth scroll (desktop wheel/trackpad only — Lenis leaves touch scrolling
+  // native by default, which is what keeps mobile performance untouched).
+  let lenis = null;
+  if (!prefersReducedMotion && typeof window.Lenis === 'function') {
+    lenis = new window.Lenis({
+      duration: 1.05,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      wheelMultiplier: 1,
+    });
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }
+  window.__lenis = lenis;
+
+  // Shared rAF-throttled scroll hook so per-page scripts (hero fade, works
+  // parallax) can react to the smoothed scroll position without each
+  // wiring up their own listener.
+  window.__onScroll = (callback) => {
+    if (lenis) {
+      lenis.on('scroll', callback);
+      return;
+    }
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        callback();
+        ticking = false;
+      });
+    }, { passive: true });
+  };
+
   const body = document.body;
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');

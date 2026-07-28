@@ -675,8 +675,8 @@ body::before {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.2, 0.75, 0.25, 1);
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -1519,10 +1519,6 @@ body::before {
 
 .overflow-x-hidden{
   overflow-x: hidden;
-}
-
-.scroll-smooth{
-  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap{

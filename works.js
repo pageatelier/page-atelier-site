@@ -123,4 +123,33 @@
     render();
     startAutoplay();
   });
+
+  // Subtle scroll parallax on the project image blocks only (never the
+  // text column) — a small fraction of each frame's own height, so it
+  // reads as depth rather than motion.
+  if (!reduceMotion) {
+    const PARALLAX_RATIO = 0.06;
+    const targets = Array.from(document.querySelectorAll('.works-parallax'));
+
+    if (targets.length) {
+      const update = () => {
+        const viewportH = window.innerHeight;
+        targets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const elementCenter = rect.top + rect.height / 2;
+          const span = viewportH / 2 + rect.height / 2;
+          const progress = Math.max(-1, Math.min(1, (viewportH / 2 - elementCenter) / span));
+          const offset = progress * rect.height * PARALLAX_RATIO;
+          el.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+        });
+      };
+
+      update();
+      if (typeof window.__onScroll === 'function') {
+        window.__onScroll(update);
+      } else {
+        window.addEventListener('scroll', update, { passive: true });
+      }
+    }
+  }
 })();

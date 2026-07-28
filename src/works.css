@@ -81,3 +81,8 @@
     transform: none !important;
   }
 }
+
+/* Scroll parallax target — set via works.js, transform only */
+.works-parallax {
+  will-change: transform;
+}
