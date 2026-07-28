@@ -27,7 +27,39 @@
           <div class="mt-[42px] grid gap-[10px]"><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="mailto:hello@pageatelier.com">hello@pageatelier.com</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="https://www.instagram.com/pageatelier.kr/">인스타그램 · @pageatelier.kr</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="services.html">서비스 안내</a></div>
         </aside>
 
-        <form class="glass-panel-strong reveal grid gap-[30px] rounded-lg border border-white/[0.68] p-[clamp(30px,5vw,62px)] shadow-panel-soft max-[680px]:px-5 max-[680px]:py-7" data-delay="1" data-contact-form data-contact-email="hello@pageatelier.com" novalidate>
+        <form
+              class="glass-panel-strong reveal grid gap-[30px] rounded-lg border border-white/[0.68] p-[clamp(30px,5vw,62px)] shadow-panel-soft max-[680px]:px-5 max-[680px]:py-7"
+              data-delay="1"
+              data-contact-form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              novalidate
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="92603522-98a1-4665-a483-813c6e88366a"
+              >
+
+              <input
+                type="hidden"
+                name="subject"
+                value="[PAGE ATELIER] 새로운 프로젝트 문의"
+              >
+
+              <input
+                type="hidden"
+                name="from_name"
+                value="PAGE ATELIER Website"
+              >
+
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                tabindex="-1"
+                autocomplete="off"
+              >
           <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="name">담당자님 성함 *</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="name" name="name" type="text" autocomplete="name" placeholder="성함" required></div>
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="email">이메일 *</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></div>
