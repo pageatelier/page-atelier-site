@@ -1,17 +1,12 @@
 (() => {
-  const serviceRows = document.querySelectorAll('.service-row');
-  serviceRows.forEach((row) => {
-    const toggle = () => {
-      const isOpen = row.classList.toggle('is-open');
-      row.setAttribute('aria-expanded', String(isOpen));
-    };
+  const items = document.querySelectorAll('.accordion-item, .term-item');
+  items.forEach((item) => {
+    const trigger = item.querySelector(':scope > button');
+    if (!trigger) return;
 
-    row.addEventListener('click', toggle);
-    row.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        toggle();
-      }
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
     });
   });
 })();

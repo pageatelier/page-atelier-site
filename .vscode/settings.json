@@ -1,0 +1,13 @@
+{
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "same",
+  "[html]": {
+    "editor.wordWrap": "on"
+  },
+  "[css]": {
+    "editor.wordWrap": "on"
+  },
+  "[javascript]": {
+    "editor.wordWrap": "on"
+  }
+}

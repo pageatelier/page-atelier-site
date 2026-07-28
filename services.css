@@ -1,7 +1,7 @@
-/* services.html only: service-row accordion (toggle icon + grid-rows expand) */
+/* services.html only: add-on & terms accordions (toggle icon + grid-rows expand) */
 
-.service-toggle::before,
-.service-toggle::after {
+.accordion-icon::before,
+.accordion-icon::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -13,24 +13,37 @@
   transition: transform 0.3s ease;
 }
 
-.service-toggle::after {
+.accordion-icon::after {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.service-row.is-open .service-toggle::after {
+.is-open .accordion-icon {
+  border-color: #527887;
+  background: #e3ecef;
+}
+
+.is-open .accordion-icon::after {
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-.service-details {
+.accordion-panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.75, 0.25, 1);
+  transition: grid-template-rows 0.4s cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
-.service-details > div {
+.accordion-panel > div {
   overflow: hidden;
 }
 
-.service-row.is-open .service-details {
+.is-open .accordion-panel {
   grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel,
+  .accordion-icon::before,
+  .accordion-icon::after {
+    transition: none !important;
+  }
 }

@@ -46,7 +46,7 @@
         <aside class="reveal sticky top-[130px] max-[980px]:static">
           <h2 class="mb-6 mt-5 font-serif text-[clamp(2.6rem,5vw,5.7rem)] font-normal leading-[0.98] tracking-[-0.055em]">Tell us about<br>your brand.</h2>
           <p class="m-0 max-w-[430px] text-ink-soft">브랜드명, 필요한 페이지, 희망 일정과 참고 사이트가 있다면 함께 남겨주세요. 아직 정리되지 않은 단계라도 현재 상황에 맞춰 범위를 제안합니다.</p>
-          <div class="mt-[42px] grid gap-[10px]"><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="mailto:hello@pageatelier.kr">hello@pageatelier.kr</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="#">Instagram · @pageatelier</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="services.html">View services</a></div>
+          <div class="mt-[42px] grid gap-[10px]"><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="mailto:hello@pageatelier.kr">hello@pageatelier.kr</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="https://www.instagram.com/pageatelier.kr/">Instagram · @pageatelier.kr</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="services.html">View services</a></div>
         </aside>
 
         <form class="glass-panel-strong reveal grid gap-[30px] rounded-lg border border-white/[0.68] p-[clamp(30px,5vw,62px)] shadow-panel-soft max-[680px]:px-5 max-[680px]:py-7" data-delay="1" data-contact-form data-contact-email="hello@pageatelier.kr" novalidate>
@@ -56,20 +56,32 @@
           </div>
           <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="brand">Brand / Company</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="brand" name="brand" type="text" placeholder="브랜드 또는 회사명"></div>
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="project">Project type *</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="project" name="project" required><option value="">선택해 주세요</option><option>신규 브랜드 웹사이트</option><option>기존 홈페이지 리뉴얼</option><option>영문 / 다국어 사이트</option><option>SEO · 출시 세팅</option><option>아직 잘 모르겠어요</option></select></div>
+            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="project">Project type *</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="project" name="project" required>
+              <option>원페이지 웹사이트</option>
+              <option>3페이지 웹사이트</option>
+              <option>5페이지 이상 웹사이트</option>
+              <option>기존 홈페이지 리뉴얼</option>
+              <option>아직 구성을 고민 중이에요</option></select></div>
           </div>
           <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="budget">Budget</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="budget" name="budget"><option value="">예산 범위 선택</option><option>150–250만원</option><option>250–400만원</option><option>400만원 이상</option><option>상담 후 결정</option></select></div>
+            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="budget">Budget</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="budget" name="budget">
+              <option value="">예산 범위 선택</option>
+              <option>100만원 미만</option>
+              <option>100–150만원</option>
+              <option>150–250만원</option>
+              <option>250만원 이상</option>
+              <option>상담 후 결정</option></select>
+            </div>
+
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="schedule">Preferred schedule</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="schedule" name="schedule" type="text" placeholder="예: 9월 중 오픈"></div>
           </div>
           <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="message">Project details *</label><textarea class="min-h-[150px] w-full resize-y rounded-none border-0 border-b border-line bg-transparent px-0 py-[14px] text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="message" name="message" placeholder="필요한 페이지, 브랜드 소개, 참고 사이트, 현재 준비된 자료 등을 자유롭게 적어주세요." required></textarea></div>
           <p class="-mt-3 min-h-6 text-sm text-blue" data-form-status aria-live="polite"></p>
-          <div class="mt-2 flex items-center justify-between gap-6 max-[680px]:flex-col max-[680px]:items-stretch"><p class="m-0 max-w-[380px] text-2xs text-ink-soft">제출 버튼은 기본 메일 앱을 열어 입력 내용을 전달합니다. 실제 운영 전 이메일 주소와 인스타그램 링크를 본인 계정으로 변경하세요.</p><button class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-xs font-semibold uppercase tracking-[0.055em] text-paper shadow-btn transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:border-blue hover:bg-blue hover:shadow-btn-hover" type="submit">Send inquiry <svg class="h-3.5 w-3.5 transition-transform duration-[350ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
+          <div class="mt-2 flex items-center justify-between gap-6 max-[680px]:flex-col max-[680px]:items-stretch"><p class="m-0 max-w-[380px] text-2xs text-ink-soft">문의 내용은 상담 목적으로만 확인하며, 영업일 기준 24시간 이내 회신드립니다.</p><button class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-xs font-semibold uppercase tracking-[0.055em] text-paper shadow-btn transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:border-blue hover:bg-blue hover:shadow-btn-hover" type="submit">Send inquiry <svg class="h-3.5 w-3.5 transition-transform duration-[350ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
         </form>
       </div>
     </section>
 
-    <section class="py-section-tight"><div class="mx-auto w-[min(100%,1680px)] px-gutter"><div class="reveal relative flex min-h-[620px] items-center overflow-hidden rounded-lg shadow-panel before:absolute before:right-[9%] before:top-[-34%] before:aspect-square before:w-[42%] before:rounded-full before:border before:border-ink/20 before:content-[''] [background:radial-gradient(circle_at_82%_12%,rgba(255,255,255,0.82),transparent_28rem),linear-gradient(135deg,#b5ced8_0%,#dfe9eb_48%,#eee8de_100%)] max-[680px]:min-h-[520px]"><div class="relative z-[1] w-full min-w-0 p-[clamp(38px,7vw,102px)]"><p class="inline-flex items-center gap-2.5 text-2xs font-semibold uppercase leading-[1.2] tracking-[0.14em] text-ink-soft before:h-px before:w-7 before:bg-current before:content-['']">A good place to begin</p><h2 class="mb-9 mt-[18px] max-w-[1120px] break-words font-serif text-[clamp(3.6rem,8.6vw,10rem)] font-normal leading-[0.88] tracking-[-0.06em] max-[680px]:text-[clamp(3.6rem,15vw,6.2rem)]">Not a perfect brief.<br>Just an honest start.</h2><p class="m-0 mb-8 max-w-[520px] text-ink-soft">완벽한 기획서가 없어도 됩니다. 어떤 브랜드인지, 무엇이 답답한지부터 이야기해 주세요.</p><a class="glass-button group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/60 px-[23px] text-xs font-semibold uppercase tracking-[0.055em] transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5" href="works.html">See selected work <svg class="h-3.5 w-3.5 transition-transform duration-[350ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a></div></div></div></section>
   </main>
 
 <footer class="pb-[34px] pt-7">
@@ -81,9 +93,9 @@
 </footer>
   </div>
 
-<a class="kakao-float fixed bottom-6 right-6 z-[400] inline-flex items-center gap-2.5 rounded-full border border-white/60 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.055em] text-ink opacity-0 translate-y-3 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.2,0.75,0.25,1)] [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 [&.is-visible]:pointer-events-auto max-[680px]:bottom-4 max-[680px]:right-4 max-[680px]:px-4 max-[680px]:py-3" href="http://pf.kakao.com/_GxmxdxnX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 채널로 문의하기">
-  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5C6.98 3.5 3 6.9 3 11.06c0 2.68 1.68 5.03 4.22 6.37-.14.51-.9 3.2-.92 3.42 0 0-.02.15.08.21.09.06.2.02.2.02.27-.04 3.14-2.06 3.63-2.39.6.09 1.22.13 1.85.13 5.02 0 9.02-3.4 9.02-7.56S17.02 3.5 12 3.5Z"/></svg>
-  카카오톡 문의
+<a class="kakao-float fixed z-[400] bottom-[calc(1.75rem+env(safe-area-inset-bottom))] right-8 inline-flex items-center gap-3 rounded-full border border-white/60 px-7 py-[18px] text-sm font-semibold uppercase tracking-[0.055em] text-ink shadow-btn transition-all duration-300 ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:shadow-btn-hover max-[680px]:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] max-[680px]:right-5 max-[680px]:px-6 max-[680px]:py-4" href="http://pf.kakao.com/_GxmxdxnX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 채널로 문의하기">
+  <svg class="h-5 w-5 max-[680px]:h-[18px] max-[680px]:w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5C6.98 3.5 3 6.9 3 11.06c0 2.68 1.68 5.03 4.22 6.37-.14.51-.9 3.2-.92 3.42 0 0-.02.15.08.21.09.06.2.02.2.02.27-.04 3.14-2.06 3.63-2.39.6.09 1.22.13 1.85.13 5.02 0 9.02-3.4 9.02-7.56S17.02 3.5 12 3.5Z"/></svg>
+  카카오톡 상담하기
 </a>
 </body>
 </html>
