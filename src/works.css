@@ -1,22 +1,9 @@
-/* works.html only: frosted "next up" cards + the mock-site browser-frame mockups */
+/* works.html only: frosted "next up" cards + project image carousels */
 
 .glass-panel {
   background: rgba(255, 255, 255, 0.36);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-}
-
-.browser-frame {
-  background: #faf9f5;
-  box-shadow: 0 22px 48px rgba(24, 33, 38, 0.18);
-}
-
-.browser-bar {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.browser-dot {
-  background: rgba(24, 33, 38, 0.22);
 }
 
 .mock-site--uptome {
@@ -29,4 +16,56 @@
 
 .mock-site--tax {
   background: #f3f0e9;
+}
+
+/* Project carousel: crossfade + subtle Ken Burns settle */
+
+.carousel {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 700ms cubic-bezier(0.2, 0.75, 0.25, 1), transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  pointer-events: none;
+}
+
+.carousel-slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.carousel-dot.is-active {
+  background: #fff;
+  transform: scale(1.35);
+}
+
+.carousel-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: opacity 250ms linear !important;
+    transform: none !important;
+  }
 }
