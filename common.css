@@ -874,8 +874,8 @@ body::before {
   margin-bottom: 0.5rem;
 }
 
-.mb-5{
-  margin-bottom: 1.25rem;
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .mb-6{
@@ -938,6 +938,10 @@ body::before {
   margin-top: 1.75rem;
 }
 
+.mt-9{
+  margin-top: 2.25rem;
+}
+
 .mt-\[13px\]{
   margin-top: 13px;
 }
@@ -974,8 +978,8 @@ body::before {
   margin-top: clamp(38px, 6vw, 84px);
 }
 
-.mt-\[clamp\(60px\2c 8vw\2c 110px\)\]{
-  margin-top: clamp(60px, 8vw, 110px);
+.mt-\[clamp\(52px\2c 7vw\2c 96px\)\]{
+  margin-top: clamp(52px, 7vw, 96px);
 }
 
 .mt-auto{
@@ -1070,12 +1074,12 @@ body::before {
   min-height: 150px;
 }
 
-.min-h-\[350px\]{
-  min-height: 350px;
+.min-h-\[320px\]{
+  min-height: 320px;
 }
 
-.min-h-\[380px\]{
-  min-height: 380px;
+.min-h-\[350px\]{
+  min-height: 350px;
 }
 
 .min-h-\[440px\]{
@@ -1191,12 +1195,12 @@ body::before {
   max-width: 440px;
 }
 
-.max-w-\[470px\]{
-  max-width: 470px;
+.max-w-\[460px\]{
+  max-width: 460px;
 }
 
-.max-w-\[480px\]{
-  max-width: 480px;
+.max-w-\[470px\]{
+  max-width: 470px;
 }
 
 .max-w-\[500px\]{
@@ -1207,12 +1211,12 @@ body::before {
   max-width: 520px;
 }
 
-.max-w-\[560px\]{
-  max-width: 560px;
+.max-w-\[540px\]{
+  max-width: 540px;
 }
 
-.max-w-\[570px\]{
-  max-width: 570px;
+.max-w-\[560px\]{
+  max-width: 560px;
 }
 
 .max-w-\[590px\]{
@@ -1261,6 +1265,10 @@ body::before {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-\[1\.05fr_0\.95fr\]{
@@ -1361,10 +1369,6 @@ body::before {
 
 .items-stretch{
   align-items: stretch;
-}
-
-.justify-end{
-  justify-content: flex-end;
 }
 
 .justify-center{
@@ -1489,8 +1493,8 @@ body::before {
        column-gap: 38px;
 }
 
-.gap-y-2{
-  row-gap: 0.5rem;
+.gap-y-3{
+  row-gap: 0.75rem;
 }
 
 .self-start{
@@ -1523,6 +1527,10 @@ body::before {
 
 .break-words{
   overflow-wrap: break-word;
+}
+
+.rounded-\[clamp\(26px\2c 3vw\2c 38px\)\]{
+  border-radius: clamp(26px, 3vw, 38px);
 }
 
 .rounded-\[clamp\(28px\2c 3vw\2c 46px\)\]{
@@ -1814,11 +1822,6 @@ body::before {
   padding-bottom: 1rem;
 }
 
-.py-5{
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .py-7{
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
@@ -1847,6 +1850,11 @@ body::before {
 .py-\[9px\]{
   padding-top: 9px;
   padding-bottom: 9px;
+}
+
+.py-\[clamp\(22px\2c 2\.4vw\2c 30px\)\]{
+  padding-top: clamp(22px, 2.4vw, 30px);
+  padding-bottom: clamp(22px, 2.4vw, 30px);
 }
 
 .py-section{
@@ -1964,16 +1972,16 @@ body::before {
   font-size: 1.04rem;
 }
 
-.text-\[clamp\(0\.94rem\2c 1vw\2c 1\.02rem\)\]{
-  font-size: clamp(0.94rem, 1vw, 1.02rem);
+.text-\[clamp\(0\.94rem\2c 0\.98vw\2c 1rem\)\]{
+  font-size: clamp(0.94rem, 0.98vw, 1rem);
 }
 
-.text-\[clamp\(0\.96rem\2c 1\.08vw\2c 1\.05rem\)\]{
-  font-size: clamp(0.96rem, 1.08vw, 1.05rem);
+.text-\[clamp\(0\.95rem\2c 1\.02vw\2c 1\.02rem\)\]{
+  font-size: clamp(0.95rem, 1.02vw, 1.02rem);
 }
 
-.text-\[clamp\(0\.96rem\2c 1\.15vw\2c 1\.08rem\)\]{
-  font-size: clamp(0.96rem, 1.15vw, 1.08rem);
+.text-\[clamp\(0\.95rem\2c 1\.08vw\2c 1\.04rem\)\]{
+  font-size: clamp(0.95rem, 1.08vw, 1.04rem);
 }
 
 .text-\[clamp\(1\.45rem\2c 2\.1vw\2c 2\.4rem\)\]{
@@ -1988,12 +1996,12 @@ body::before {
   font-size: clamp(1.7rem, 2.6vw, 2.9rem);
 }
 
-.text-\[clamp\(1\.9rem\2c 2\.8vw\2c 3\.3rem\)\]{
-  font-size: clamp(1.9rem, 2.8vw, 3.3rem);
+.text-\[clamp\(1\.8rem\2c 2\.55vw\2c 3rem\)\]{
+  font-size: clamp(1.8rem, 2.55vw, 3rem);
 }
 
-.text-\[clamp\(1rem\2c 1\.28vw\2c 1\.16rem\)\]{
-  font-size: clamp(1rem, 1.28vw, 1.16rem);
+.text-\[clamp\(1rem\2c 1\.22vw\2c 1\.14rem\)\]{
+  font-size: clamp(1rem, 1.22vw, 1.14rem);
 }
 
 .text-\[clamp\(1rem\2c 1\.3vw\2c 1\.15rem\)\]{
@@ -2004,16 +2012,12 @@ body::before {
   font-size: clamp(1rem, 1.4vw, 1.22rem);
 }
 
-.text-\[clamp\(2\.1rem\2c 3\.2vw\2c 4rem\)\]{
-  font-size: clamp(2.1rem, 3.2vw, 4rem);
+.text-\[clamp\(2\.1rem\2c 3\.7vw\2c 4\.4rem\)\]{
+  font-size: clamp(2.1rem, 3.7vw, 4.4rem);
 }
 
 .text-\[clamp\(2\.2rem\2c 4\.2vw\2c 4\.8rem\)\]{
   font-size: clamp(2.2rem, 4.2vw, 4.8rem);
-}
-
-.text-\[clamp\(2\.3rem\2c 4vw\2c 4\.8rem\)\]{
-  font-size: clamp(2.3rem, 4vw, 4.8rem);
 }
 
 .text-\[clamp\(2\.4rem\2c 4\.8vw\2c 5\.3rem\)\]{
@@ -2042,6 +2046,10 @@ body::before {
 
 .text-\[clamp\(2rem\2c 3\.3vw\2c 4rem\)\]{
   font-size: clamp(2rem, 3.3vw, 4rem);
+}
+
+.text-\[clamp\(2rem\2c 3vw\2c 3\.7rem\)\]{
+  font-size: clamp(2rem, 3vw, 3.7rem);
 }
 
 .text-\[clamp\(3\.2rem\2c 5\.9vw\2c 6\.8rem\)\]{
@@ -2127,12 +2135,12 @@ body::before {
   line-height: 0.9;
 }
 
-.leading-\[1\.02\]{
-  line-height: 1.02;
+.leading-\[1\.03\]{
+  line-height: 1.03;
 }
 
-.leading-\[1\.04\]{
-  line-height: 1.04;
+.leading-\[1\.05\]{
+  line-height: 1.05;
 }
 
 .leading-\[1\.08\]{
@@ -2165,6 +2173,10 @@ body::before {
 
 .leading-\[1\.78\]{
   line-height: 1.78;
+}
+
+.leading-\[1\.7\]{
+  line-height: 1.7;
 }
 
 .leading-\[1\.8\]{
@@ -2249,6 +2261,10 @@ body::before {
 
 .tracking-\[0\.14em\]{
   letter-spacing: 0.14em;
+}
+
+.tracking-\[0\.16em\]{
+  letter-spacing: 0.16em;
 }
 
 .tracking-\[0\.1em\]{
@@ -2766,6 +2782,10 @@ body::before {
   border-color: rgb(82 120 135 / var(--tw-border-opacity, 1));
 }
 
+.hover\:border-blue\/25:hover{
+  border-color: rgb(82 120 135 / 0.25);
+}
+
 .hover\:border-ink\/\[0\.24\]:hover{
   border-color: rgb(24 33 38 / 0.24);
 }
@@ -2907,10 +2927,6 @@ body::before {
     gap: 2rem;
   }
 
-  .max-\[980px\]\:gap-9{
-    gap: 2.25rem;
-  }
-
   .max-\[980px\]\:justify-self-start{
     justify-self: start;
   }
@@ -2945,12 +2961,8 @@ body::before {
     align-items: flex-start;
   }
 
-  .max-\[880px\]\:justify-start{
-    justify-content: flex-start;
-  }
-
-  .max-\[880px\]\:rounded-\[28px\]{
-    border-radius: 28px;
+  .max-\[880px\]\:gap-5{
+    gap: 1.25rem;
   }
 }
 
@@ -3011,12 +3023,12 @@ body::before {
     min-height: 0px;
   }
 
-  .max-\[680px\]\:min-h-\[290px\]{
-    min-height: 290px;
+  .max-\[680px\]\:min-h-\[250px\]{
+    min-height: 250px;
   }
 
-  .max-\[680px\]\:min-h-\[310px\]{
-    min-height: 310px;
+  .max-\[680px\]\:min-h-\[260px\]{
+    min-height: 260px;
   }
 
   .max-\[680px\]\:min-h-\[390px\]{
@@ -3111,6 +3123,10 @@ body::before {
     padding: 1.5rem;
   }
 
+  .max-\[680px\]\:p-7{
+    padding: 1.75rem;
+  }
+
   .max-\[680px\]\:px-3\.5{
     padding-left: 0.875rem;
     padding-right: 0.875rem;
@@ -3160,12 +3176,24 @@ body::before {
     padding-top: 124px;
   }
 
+  .max-\[680px\]\:text-\[clamp\(1\.95rem\2c 8vw\2c 2\.8rem\)\]{
+    font-size: clamp(1.95rem, 8vw, 2.8rem);
+  }
+
+  .max-\[680px\]\:text-\[clamp\(1\.9rem\2c 7\.7vw\2c 2\.7rem\)\]{
+    font-size: clamp(1.9rem, 7.7vw, 2.7rem);
+  }
+
   .max-\[680px\]\:text-\[clamp\(2\.1rem\2c 10vw\2c 3\.3rem\)\]{
     font-size: clamp(2.1rem, 10vw, 3.3rem);
   }
 
-  .max-\[680px\]\:text-\[clamp\(3\.1rem\2c 14vw\2c 5\.2rem\)\]{
-    font-size: clamp(3.1rem, 14vw, 5.2rem);
+  .max-\[680px\]\:text-\[clamp\(2rem\2c 8\.3vw\2c 2\.9rem\)\]{
+    font-size: clamp(2rem, 8.3vw, 2.9rem);
+  }
+
+  .max-\[680px\]\:text-\[clamp\(2rem\2c 8\.8vw\2c 3rem\)\]{
+    font-size: clamp(2rem, 8.8vw, 3rem);
   }
 
   .max-\[680px\]\:text-\[clamp\(3\.3rem\2c 15vw\2c 5\.6rem\)\]{
@@ -3180,6 +3208,10 @@ body::before {
     font-size: clamp(3.8rem, 19.5vw, 6rem);
   }
 
+  .max-\[680px\]\:text-\[clamp\(3rem\2c 13vw\2c 4\.8rem\)\]{
+    font-size: clamp(3rem, 13vw, 4.8rem);
+  }
+
   .max-\[680px\]\:text-\[clamp\(3rem\2c 14vw\2c 5\.7rem\)\]{
     font-size: clamp(3rem, 14vw, 5.7rem);
   }
@@ -3188,8 +3220,14 @@ body::before {
     line-height: 0.83;
   }
 
-  .max-\[680px\]\:leading-\[0\.93\]{
-    line-height: 0.93;
+  .max-\[680px\]\:leading-\[0\.94\]{
+    line-height: 0.94;
+  }
+}
+
+@media (max-width: 520px){
+  .max-\[520px\]\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
