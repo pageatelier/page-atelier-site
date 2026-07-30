@@ -164,6 +164,21 @@
     }
   }
 
+  /* Scroll-triggered reveal (kakao float button): hidden until the user
+     scrolls past the hero, so it never overlaps hero content on mobile. */
+  [data-scroll-reveal] {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  [data-scroll-reveal].is-shown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal {
       opacity: 1;
@@ -173,6 +188,10 @@
 
     .page-enter {
       animation: none;
+    }
+
+    [data-scroll-reveal] {
+      transition: none;
     }
   }
 }

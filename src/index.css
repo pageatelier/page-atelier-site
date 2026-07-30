@@ -5,3 +5,25 @@
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
+
+/* Full-bleed hero photo: slow, one-time settle-in zoom. */
+.hero-bg-zoom {
+  transform-origin: center;
+  animation: heroBgZoom 22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroBgZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-zoom {
+    animation: none;
+  }
+}

@@ -75,6 +75,31 @@
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
+  // Kakao float button: stay hidden until the user scrolls a little, so it
+  // never sits on top of hero content right on page load.
+  const scrollRevealItems = document.querySelectorAll('[data-scroll-reveal]');
+  if (scrollRevealItems.length) {
+    const SCROLL_REVEAL_THRESHOLD = 100;
+    const updateScrollReveal = () => {
+      const shown = window.scrollY > SCROLL_REVEAL_THRESHOLD;
+      scrollRevealItems.forEach((item) => item.classList.toggle('is-shown', shown));
+    };
+    updateScrollReveal();
+    window.__onScroll(updateScrollReveal);
+
+    // Belt-and-suspenders: also listen natively, since Lenis's own
+    // 'scroll' event doesn't always fire for programmatic/instant jumps.
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        updateScrollReveal();
+        scrollTicking = false;
+      });
+    }, { passive: true });
+  }
+
   const yearNodes = document.querySelectorAll('[data-year]');
   yearNodes.forEach((node) => {
     node.textContent = String(new Date().getFullYear());

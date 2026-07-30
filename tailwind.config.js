@@ -57,5 +57,6 @@ module.exports = {
       },
     },
   },
+  safelist: ['is-shown'],
   plugins: [],
 }
