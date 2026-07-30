@@ -825,6 +825,10 @@ body::before {
   right: 1.5rem;
 }
 
+.top-0{
+  top: 0px;
+}
+
 .top-\[118px\]{
   top: 118px;
 }
@@ -1056,6 +1060,10 @@ body::before {
 
 .h-\[18px\]{
   height: 18px;
+}
+
+.h-\[30\%\]{
+  height: 30%;
 }
 
 .h-\[42\%\]{
@@ -1680,12 +1688,22 @@ body::before {
   background-color: transparent;
 }
 
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
 .bg-gradient-to-t{
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
 .from-black\/20{
   --tw-gradient-from: rgb(0 0 0 / 0.2) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-black\/35{
+  --tw-gradient-from: rgb(0 0 0 / 0.35) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -1959,6 +1977,10 @@ body::before {
 
 .pt-\[7px\]{
   padding-top: 7px;
+}
+
+.pt-\[clamp\(104px\2c 13vw\2c 150px\)\]{
+  padding-top: clamp(104px, 13vw, 150px);
 }
 
 .text-left{
@@ -2949,6 +2971,10 @@ body::before {
     height: 2.5rem;
   }
 
+  .max-\[680px\]\:h-\[26\%\]{
+    height: 26%;
+  }
+
   .max-\[680px\]\:h-\[36\%\]{
     height: 36%;
   }
@@ -3108,6 +3134,10 @@ body::before {
 
   .max-\[680px\]\:pl-3\.5{
     padding-left: 0.875rem;
+  }
+
+  .max-\[680px\]\:pt-\[92px\]{
+    padding-top: 92px;
   }
 
   .max-\[680px\]\:text-center{
