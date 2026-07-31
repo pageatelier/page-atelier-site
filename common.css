@@ -2103,10 +2103,6 @@ body::before {
   font-size: clamp(3rem, 13vw, 6.5rem);
 }
 
-.text-\[clamp\(3rem\2c 4\.8vw\2c 6rem\)\]{
-  font-size: clamp(3rem, 4.8vw, 6rem);
-}
-
 .text-\[clamp\(3rem\2c 6\.2vw\2c 7\.2rem\)\]{
   font-size: clamp(3rem, 6.2vw, 7.2rem);
 }
