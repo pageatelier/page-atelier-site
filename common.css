@@ -2950,6 +2950,10 @@ body::before {
     margin-top: 1.5rem;
   }
 
+  .max-\[680px\]\:block{
+    display: block;
+  }
+
   .max-\[680px\]\:flex{
     display: flex;
   }
@@ -3131,8 +3135,8 @@ body::before {
     padding-left: 0.875rem;
   }
 
-  .max-\[680px\]\:pt-\[92px\]{
-    padding-top: 92px;
+  .max-\[680px\]\:pt-\[140px\]{
+    padding-top: 140px;
   }
 
   .max-\[680px\]\:text-center{
