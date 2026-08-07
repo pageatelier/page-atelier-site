@@ -1810,9 +1810,9 @@ body::before {
      object-fit: cover;
 }
 
-.object-\[78\%_center\]{
-  -o-object-position: 78% center;
-     object-position: 78% center;
+.object-\[center_18\%\]{
+  -o-object-position: center 18%;
+     object-position: center 18%;
 }
 
 .p-0{
