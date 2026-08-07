@@ -1,10 +1,4 @@
-/* works.html only: frosted "next up" cards + project image carousels */
-
-.glass-panel {
-  background: rgba(255, 255, 255, 0.36);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+/* works.html only: project image carousels */
 
 .mock-site--uptome {
   background: #f4f1e9;

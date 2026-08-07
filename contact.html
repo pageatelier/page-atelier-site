@@ -60,9 +60,14 @@
     <section class="py-section" id="inquiry">
       <div class="mx-auto grid w-[min(100%,1680px)] grid-cols-[minmax(300px,0.75fr)_minmax(0,1.25fr)] items-start gap-[clamp(50px,10vw,160px)] px-gutter max-[980px]:grid-cols-1">
         <aside class="reveal sticky top-[130px] max-[980px]:static">
-          <h2 class="mb-6 mt-5 font-serif text-[clamp(2.6rem,5vw,5.7rem)] font-normal leading-[0.98] tracking-[-0.055em]">Tell us about<br>your brand.</h2>
+          <h1 class="mb-6 mt-5 font-serif text-[clamp(2.6rem,5vw,5.7rem)] font-normal leading-[0.98] tracking-[-0.055em]">Tell us about<br>your brand.</h1>
           <p class="m-0 max-w-[430px] text-ink-soft">브랜드명, 필요한 페이지, 희망 일정과 참고 사이트가 있다면 함께 남겨주세요. 아직 정리되지 않은 단계라도 현재 상황에 맞춰 범위를 제안합니다.</p>
           <div class="mt-[42px] grid gap-[10px]"><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="mailto:hello@pageatelier.com">hello@pageatelier.com</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="https://www.instagram.com/pageatelier.kr/">인스타그램 · @pageatelier.kr</a><a class="w-fit border-b border-line pb-1 text-sm font-semibold" href="services.html">서비스 안내</a></div>
+
+          <a class="group mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-xs font-semibold uppercase tracking-[0.055em] text-paper shadow-btn transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:border-blue hover:bg-blue hover:shadow-btn-hover" href="http://pf.kakao.com/_GxmxdxnX/chat" target="_blank" rel="noopener noreferrer">
+            <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.5C6.98 3.5 3 6.9 3 11.06c0 2.68 1.68 5.03 4.22 6.37-.14.51-.9 3.2-.92 3.42 0 0-.02.15.08.21.09.06.2.02.2.02.27-.04 3.14-2.06 3.63-2.39.6.09 1.22.13 1.85.13 5.02 0 9.02-3.4 9.02-7.56S17.02 3.5 12 3.5Z"/></svg>
+            카카오톡으로 바로 문의하기
+          </a>
         </aside>
 
         <form
@@ -102,30 +107,38 @@
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="name">담당자님 성함 *</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="name" name="name" type="text" autocomplete="name" placeholder="성함" required></div>
             <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="email">이메일 *</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></div>
           </div>
-          <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="brand">브랜드 / 회사명</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="brand" name="brand" type="text" placeholder="브랜드 또는 회사명"></div>
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="project">프로젝트 유형 *</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="project" name="project" required>
+          <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="project">프로젝트 유형 *</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="project" name="project" required>
+              <option value="">선택해 주세요</option>
               <option>원페이지 웹사이트</option>
               <option>3페이지 웹사이트</option>
               <option>5페이지 이상 웹사이트</option>
               <option>기존 홈페이지 리뉴얼</option>
               <option>아직 구성을 고민 중이에요</option></select></div>
-          </div>
-          <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="budget">예산</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="budget" name="budget">
-              <option value="">예산 범위 선택</option>
-              <option>100만 원 미만</option>
-              <option>100–150만 원</option>
-              <option>150–250만 원</option>
-              <option>250만 원 이상</option>
-              <option>상담 후 결정</option></select>
-            </div>
+          <div class="relative"><label class="mb-[10px] flex items-baseline justify-between gap-3 text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="message"><span>프로젝트 내용 *</span><span class="normal-case tracking-normal text-ink-soft/70">간단히 적어주셔도 됩니다</span></label><textarea class="min-h-[150px] w-full resize-y rounded-none border-0 border-b border-line bg-transparent px-0 py-[14px] text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="message" name="message" placeholder="필요한 페이지, 브랜드 소개, 참고 사이트, 현재 준비된 자료 등을 한두 줄이라도 편하게 적어주세요." required></textarea></div>
 
-            <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="schedule">희망 일정</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="schedule" name="schedule" type="text" placeholder="예: 9월 중 오픈"></div>
-          </div>
-          <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="message">프로젝트 내용 *</label><textarea class="min-h-[150px] w-full resize-y rounded-none border-0 border-b border-line bg-transparent px-0 py-[14px] text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="message" name="message" placeholder="필요한 페이지, 브랜드 소개, 참고 사이트, 현재 준비된 자료 등을 자유롭게 적어주세요." required></textarea></div>
+          <details class="group rounded-md border border-line/70 px-4 open:pb-[6px]">
+            <summary class="flex min-h-[52px] cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-ink"><span>더 알려주시면 좋아요<span class="ml-2 font-normal text-ink-soft">(선택)</span></span><svg class="details-chevron h-3.5 w-3.5 shrink-0 text-ink-soft transition-transform duration-300" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="grid gap-[22px] pb-2 pt-4">
+              <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
+                <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="brand">브랜드 / 회사명</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="brand" name="brand" type="text" placeholder="브랜드 또는 회사명"></div>
+                <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="budget">예산</label><select class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="budget" name="budget">
+                  <option value="">예산 범위 선택</option>
+                  <option>100만 원 미만</option>
+                  <option>100–150만 원</option>
+                  <option>150–250만 원</option>
+                  <option>250만 원 이상</option>
+                  <option>상담 후 결정</option></select>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-[22px] max-[680px]:grid-cols-1">
+                <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="schedule">희망 일정</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="schedule" name="schedule" type="text" placeholder="예: 9월 중 오픈"></div>
+                <div class="relative"><label class="mb-[10px] block text-2xs font-semibold uppercase tracking-[0.11em] text-ink-soft" for="reference_url">참고하고 싶은 사이트 URL</label><input class="h-[54px] w-full rounded-none border-0 border-b border-line bg-transparent text-ink outline-0 transition-colors duration-[250ms] ease-in-out focus:border-blue" id="reference_url" name="reference_url" type="url" placeholder="https://example.com"></div>
+              </div>
+            </div>
+          </details>
+
           <p class="-mt-3 min-h-6 text-sm text-blue" data-form-status aria-live="polite"></p>
-          <div class="mt-2 flex items-center justify-between gap-6 max-[680px]:flex-col max-[680px]:items-stretch"><p class="m-0 max-w-[380px] text-2xs text-ink-soft">문의 내용은 상담 목적으로만 확인하며, 영업일 기준 24시간 이내 회신드립니다.</p><button class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-xs font-semibold text-paper shadow-btn transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:border-blue hover:bg-blue hover:shadow-btn-hover" type="submit">프로젝트 문의 보내기<svg class="h-3.5 w-3.5 transition-transform duration-[350ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
+          <div class="mt-2 flex items-center justify-between gap-6 max-[680px]:flex-col max-[680px]:items-stretch"><p class="m-0 max-w-[380px] text-2xs text-ink-soft">상담은 무료이며, 영업일 기준 24시간 이내 답변드립니다.</p><button class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-xs font-semibold text-paper shadow-btn transition-all duration-[350ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] hover:-translate-y-0.5 hover:border-blue hover:bg-blue hover:shadow-btn-hover" type="submit">프로젝트 문의 보내기<svg class="h-3.5 w-3.5 transition-transform duration-[350ms] ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
         </form>
       </div>
     </section>
