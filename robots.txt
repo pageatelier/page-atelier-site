@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /kmong-detail.html
+Disallow: /kmong-detail-mobile.html
+
+Sitemap: https://pageatelier.com/sitemap.xml
