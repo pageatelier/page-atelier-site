@@ -34,6 +34,10 @@
   overflow: hidden;
 }
 
+.hero-title-mask--inline {
+  display: inline-block;
+}
+
 .hero-title-line {
   display: block;
   transform: translateY(115%);
@@ -43,6 +47,10 @@
 
 .hero-title-line--2 {
   animation-delay: 0.48s;
+}
+
+.hero-title-line--3 {
+  animation-delay: 0.6s;
 }
 
 @keyframes heroTitleRollUp {
