@@ -2064,6 +2064,10 @@ body::before {
   text-align: left;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .text-right{
   text-align: right;
 }
@@ -3113,10 +3117,6 @@ body::before {
 
   .max-\[680px\]\:flex-col{
     flex-direction: column;
-  }
-
-  .max-\[680px\]\:flex-wrap{
-    flex-wrap: wrap;
   }
 
   .max-\[680px\]\:items-stretch{
