@@ -93,7 +93,7 @@
               <span class="relative z-[1] inline-flex min-h-7 items-center justify-center rounded-full bg-ink px-3 text-2xs font-semibold uppercase leading-none tracking-[0.1em] text-paper">Most Popular</span>
             </div>
             <h3 class="relative z-[1] m-0 font-serif text-[clamp(2.7rem,4.2vw,4.7rem)] font-normal leading-[0.94] tracking-[-0.052em]">Basic</h3>
-            <p class="relative z-[1] mt-[26px] min-h-[84px] text-sm leading-[1.75] text-ink-soft [word-break:keep-all] max-[980px]:min-h-0 max-[980px]:max-w-[650px]">브랜드 소개와 주요 서비스를 명확하게 구분해 더욱 깊이 있는 인상과 신뢰를 만드는 구성입니다.</p>
+            <p class="relative z-[1] mt-[26px] min-h-[84px] text-sm leading-[1.75] text-ink-soft [word-break:keep-all] max-[980px]:min-h-0 max-[980px]:max-w-[650px]">3장의 페이지로 구성하여 브랜드 소개와 주요 서비스를 명확하게 구분해 더욱 깊이 있는 인상과 신뢰를 만드는 구성입니다.</p>
             <div class="relative z-[1] mt-auto pt-12 max-[980px]:pt-[70px]">
               <span class="mb-2 block text-2xs font-semibold uppercase tracking-[0.14em] text-blue">오픈 프로모션</span>
               <p class="m-0 flex items-baseline gap-1.5 whitespace-nowrap font-serif text-[clamp(2.7rem,4.2vw,4.8rem)] font-normal leading-none tracking-[-0.06em]">1,390,000원</p>
@@ -111,7 +111,7 @@
               <span class="text-2xs font-semibold uppercase tracking-[0.145em] text-ink-soft">5페이지</span>
             </div>
             <h3 class="m-0 font-serif text-[clamp(2.7rem,4.2vw,4.7rem)] font-normal leading-[0.94] tracking-[-0.052em]">Signature</h3>
-            <p class="relative z-[1] mt-[26px] min-h-[84px] text-sm leading-[1.75] text-ink-soft [word-break:keep-all] max-[980px]:min-h-0 max-[980px]:max-w-[650px]">브랜드의 이야기부터 서비스와 이용 정보까지 완성도 높은 디지털 경험으로 구축하는 시그니처 패키지입니다.</p>
+            <p class="relative z-[1] mt-[26px] min-h-[84px] text-sm leading-[1.75] text-ink-soft [word-break:keep-all] max-[980px]:min-h-0 max-[980px]:max-w-[650px]">5장의 페이지로 구성하여 브랜드의 이야기부터 서비스와 이용 정보까지 완성도 높은 디지털 경험으로 구축하는 시그니처 패키지입니다.</p>
             <div class="relative z-[1] mt-auto pt-12 max-[980px]:pt-[70px]">
               <span class="mb-2 block text-2xs font-semibold uppercase tracking-[0.14em] text-blue">오픈 프로모션</span>
               <p class="m-0 flex items-baseline gap-1.5 whitespace-nowrap font-serif text-[clamp(2.7rem,4.2vw,4.8rem)] font-normal leading-none tracking-[-0.06em]">1,890,000원</p>
@@ -120,6 +120,7 @@
             <ul class="relative z-[1] m-0 mt-[34px] grid list-none gap-2.5 border-t border-line p-0 pt-6">
               <li class="flex items-center gap-[11px] text-sm text-ink-soft before:h-1.5 before:w-1.5 before:flex-none before:rounded-full before:bg-blue before:content-['']">5개 페이지</li>
               <li class="flex items-center gap-[11px] text-sm text-ink-soft before:h-1.5 before:w-1.5 before:flex-none before:rounded-full before:bg-blue before:content-['']">수정 3회</li>
+              <li class="flex items-center gap-[11px] text-sm text-ink-soft before:h-1.5 before:w-1.5 before:flex-none before:rounded-full before:bg-blue before:content-['']">기본 문의 폼 포함</li>
               <li class="flex items-center gap-[11px] text-sm text-ink-soft before:h-1.5 before:w-1.5 before:flex-none before:rounded-full before:bg-blue before:content-['']">약 14–21일</li>
             </ul>
           </article>
@@ -428,9 +429,19 @@
   </main>
 
 <footer class="pb-[34px] pt-7">
-  <div class="mx-auto grid w-[min(100%,1680px)] grid-cols-[1fr_auto_1fr] items-end gap-8 border-t border-line px-gutter pt-7 max-[980px]:grid-cols-2 max-[680px]:grid-cols-1">
+  <div class="mx-auto grid w-[min(100%,1680px)] grid-cols-[1fr_auto_1fr] items-start gap-8 border-t border-line px-gutter pt-7 max-[980px]:grid-cols-2 max-[680px]:grid-cols-1">
     <a class="font-serif text-[clamp(2.2rem,4.2vw,4.8rem)] leading-[0.9] tracking-[-0.055em]" href="/">PAGE<br>ATELIER</a>
-    <nav class="flex gap-5 text-2xs font-semibold uppercase tracking-[0.08em] text-ink-soft max-[980px]:justify-self-end max-[680px]:flex-wrap max-[680px]:justify-self-start" aria-label="푸터 메뉴"><a href="/">About</a><a href="/works">Works</a><a href="/services">Services</a><a href="/contact">Contact</a></nav>
+    <div class="flex flex-col items-center gap-4 max-[980px]:justify-self-end max-[680px]:justify-self-start">
+      <nav class="flex flex-wrap justify-center gap-5 text-2xs font-semibold uppercase tracking-[0.08em] text-ink-soft" aria-label="푸터 메뉴"><a href="/">About</a><a href="/works">Works</a><a href="/services">Services</a><a href="/contact">Contact</a></nav>
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-2xs leading-[1.6] text-ink-soft">
+        <span>페이지아뜰리에</span>
+        <span>대표 김애신</span>
+        <span>사업자등록번호 476-04-03895</span>
+        <span>업태 정보통신업</span>
+        <span>종목 컴퓨터 프로그래밍 서비스업</span>
+      </div>
+      <a class="text-2xs text-ink-soft transition-colors duration-300 hover:text-ink" href="mailto:hello@pageatelier.com">hello@pageatelier.com</a>
+    </div>
     <div class="text-right text-2xs text-ink-soft justify-self-end max-[980px]:col-span-2 max-[980px]:justify-self-start max-[980px]:text-left max-[680px]:col-span-1">Boutique Web Studio<br>© <span data-year></span> PAGE ATELIER</div>
   </div>
 </footer>
