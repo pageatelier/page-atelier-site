@@ -2452,3 +2452,258 @@ body.brief-lock{overflow:hidden}
   cursor:wait;
   transform:none !important;
 }
+
+
+/* =========================================================
+   CLIENT REVIEWS — real message proof
+========================================================= */
+.reviews{
+  position:relative;
+  overflow:hidden;
+  background:var(--cream);
+}
+
+.reviews::before{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  right:-76px;
+  top:58px;
+  border-radius:50%;
+  background:var(--lavender);
+  opacity:.16;
+  pointer-events:none;
+}
+
+.reviews-head{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr .48fr;
+  gap:7vw;
+  align-items:end;
+  margin-bottom:72px;
+}
+
+.reviews-head h2{
+  margin:0;
+  font-size:clamp(42px,5vw,74px);
+  line-height:1.06;
+  letter-spacing:-.06em;
+  font-weight:650;
+}
+
+.reviews-head h2 span{
+  background:var(--lavender-deep);
+  color:#fff;
+  padding:0 .05em;
+  line-height:1;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+
+.reviews-intro{
+  margin:0 0 7px;
+  max-width:470px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.85;
+}
+
+.review-proof-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(28px,4vw,64px);
+  align-items:start;
+  max-width:1240px;
+  margin:0 auto;
+}
+
+.review-proof{
+  margin:0;
+  min-width:0;
+}
+
+.review-proof-tax{
+  margin-top:90px;
+}
+
+.review-proof-image{
+  position:relative;
+  padding:22px;
+  background:#DCE8F2;
+  border:0;
+  border-radius:18px;
+  box-shadow:none;
+  overflow:visible;
+}
+
+.review-proof-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
+}
+
+.review-proof-sticker{
+  position:absolute;
+  right:-18px;
+  top:-18px;
+  width:72px;
+  height:72px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--ink);
+  border-radius:50%;
+  color:var(--ink);
+  font-family:"Bowlby One SC","Arial Black",sans-serif;
+  font-size:8px;
+  line-height:1.05;
+  letter-spacing:.02em;
+  text-align:center;
+  transform:rotate(8deg);
+}
+
+.review-proof-sticker-lime{
+  background:var(--lime);
+}
+
+.review-proof-sticker-orange{
+  background:var(--orange);
+  color:#fff;
+  transform:rotate(-7deg);
+}
+
+.review-proof-caption{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:14px;
+  align-items:start;
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(17,17,17,.22);
+}
+
+.review-proof-no{
+  padding-top:2px;
+  color:var(--lavender-deep);
+  font-size:10px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+
+.review-proof-caption strong{
+  display:block;
+  margin-bottom:7px;
+  font-size:15px;
+  line-height:1.4;
+  font-weight:720;
+}
+
+.review-proof-caption p{
+  margin:0;
+  max-width:470px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.75;
+}
+
+.reviews-source{
+  position:relative;
+  z-index:2;
+  margin:54px 0 0;
+  color:#8A847B;
+  font-size:10px;
+  line-height:1.6;
+  letter-spacing:.02em;
+  text-align:center;
+}
+
+@media (max-width:1050px){
+  .reviews-head{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .reviews-intro{
+    max-width:650px;
+  }
+
+  .review-proof-tax{
+    margin-top:56px;
+  }
+}
+
+@media (max-width:760px){
+  .reviews::before{
+    width:145px;
+    height:145px;
+    right:-68px;
+    top:108px;
+  }
+
+  .reviews-head{
+    margin-bottom:46px;
+  }
+
+  .reviews-head h2{
+    font-size:42px;
+    line-height:1.08;
+  }
+
+  .reviews-intro{
+    font-size:13px;
+    line-height:1.75;
+  }
+
+  .review-proof-grid{
+    grid-template-columns:1fr;
+    gap:58px;
+  }
+
+  .review-proof-image{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  .review-proof-image img{
+    border-radius:10px;
+  }
+
+  .review-proof-tax{
+    margin-top:0;
+  }
+
+  .review-proof-sticker{
+    width:58px;
+    height:58px;
+    right:-7px;
+    top:-15px;
+    font-size:6.5px;
+  }
+
+  .review-proof-caption{
+    grid-template-columns:34px 1fr;
+    gap:10px;
+    margin-top:14px;
+    padding-top:14px;
+  }
+
+  .review-proof-caption strong{
+    font-size:14px;
+  }
+
+  .review-proof-caption p{
+    font-size:12px;
+    line-height:1.7;
+  }
+
+  .reviews-source{
+    margin-top:38px;
+    font-size:9px;
+  }
+}
