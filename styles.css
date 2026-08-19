@@ -278,7 +278,7 @@ img{display:block;max-width:100%}
     position:fixed;
     left:16px;
     right:16px;
-    bottom:16px;
+    bottom:28px;
     z-index:90;
     display:grid;
     grid-template-columns:1fr 58px;
