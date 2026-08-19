@@ -1133,7 +1133,7 @@ img{display:block;max-width:100%}
   .hero-flower{
     width:165px;
     left:6%;
-    top:28%;
+    top:26%;
   }
   .hero h1{
     font-size:clamp(44px,12vw,64px);
@@ -1776,7 +1776,7 @@ img{display:block;max-width:100%}
 
   .process-track{
     grid-template-columns:1fr;
-    row-gap:44px;
+    row-gap:34px;
   }
 
   .step{
