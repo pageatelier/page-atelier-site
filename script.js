@@ -57,41 +57,36 @@ if ("IntersectionObserver" in window) {
 
 
 // =========================================================
-// PAYMENT READY + POST-PAYMENT BRIEF
-// Toss Payments is connected in the next step.
+// FREE PREVIEW REQUEST
 // =========================================================
-const checkoutLinks = document.querySelectorAll("[data-checkout]");
+const previewLinks = document.querySelectorAll("[data-preview]");
 const briefOverlay = document.querySelector("[data-brief-overlay]");
 const briefForm = document.querySelector("[data-brief-form]");
 const briefDone = document.querySelector("[data-brief-done]");
 const briefProduct = document.querySelector("[data-brief-product]");
-const briefOrder = document.querySelector("[data-brief-order]");
+const productSelect = document.querySelector("[data-product-select]");
 
 const PRODUCTS = {
-  START: { name: "START · 실속형 랜딩페이지", amount: 390000 },
-  STANDARD: { name: "STANDARD · 브랜드 랜딩페이지", amount: 590000 }
+  START: "START · 39만원",
+  STANDARD: "STANDARD · 59만원",
+  UNSURE: "아직 잘 모르겠어요 · 추천받기"
 };
 
-function openBrief({ orderId = "", product = "", amount = "" } = {}) {
+function updatePreviewProduct(product = "") {
+  const key = String(product || "").toUpperCase();
+  if (productSelect) productSelect.value = PRODUCTS[key] ? key : "";
+  if (briefProduct) {
+    briefProduct.textContent = PRODUCTS[key] || "아직 정하지 않아도 괜찮아요";
+  }
+}
+
+function openBrief({ product = "" } = {}) {
   if (!briefOverlay) return;
 
-  const productKey = String(product || "").toUpperCase();
-  const productData = PRODUCTS[productKey];
-
+  updatePreviewProduct(product);
   briefOverlay.classList.add("is-open");
   briefOverlay.setAttribute("aria-hidden", "false");
   document.body.classList.add("brief-lock");
-
-  const orderIdInput = briefOverlay.querySelector("[data-order-id]");
-  const productInput = briefOverlay.querySelector("[data-order-product]");
-  const amountInput = briefOverlay.querySelector("[data-order-amount]");
-
-  if (orderIdInput) orderIdInput.value = orderId;
-  if (productInput) productInput.value = productKey;
-  if (amountInput) amountInput.value = amount || productData?.amount || "";
-
-  if (briefProduct) briefProduct.textContent = productData?.name || "랜딩페이지 제작";
-  if (briefOrder) briefOrder.textContent = orderId ? `ORDER ID ${orderId}` : "ORDER ID —";
 
   briefForm?.removeAttribute("hidden");
   if (briefDone) briefDone.hidden = true;
@@ -109,40 +104,33 @@ document.querySelectorAll("[data-brief-close]").forEach((button) => {
   button.addEventListener("click", closeBrief);
 });
 
-checkoutLinks.forEach((link) => {
+previewLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-
-    const product = link.dataset.product;
-    const amount = Number(link.dataset.amount || 0);
-
-    // NEXT STEP:
-    // Replace this notice with Toss Payments requestPayment().
-    // successUrl should return to this page with payment=success,
-    // orderId, product and amount query parameters.
-    window.dispatchEvent(new CustomEvent("pageatelier:checkout", {
-      detail: { product, amount }
-    }));
-
-    alert(`${product} (${amount.toLocaleString("ko-KR")}원) 결제 버튼 준비 완료! 다음 단계에서 토스 결제창을 연결하면 됩니다.`);
+    openBrief({ product: link.dataset.product || "" });
   });
 });
 
-const params = new URLSearchParams(window.location.search);
-const paymentStatus = params.get("payment");
+productSelect?.addEventListener("change", () => {
+  updatePreviewProduct(productSelect.value);
+});
 
-// Toss successUrl target example:
-// /?payment=success&orderId=ORDER_ID&product=START&amount=390000
-if (paymentStatus === "success" || params.get("brief") === "demo") {
-  openBrief({
-    orderId: params.get("orderId") || (params.get("brief") === "demo" ? "DEMO-20260819" : ""),
-    product: params.get("product") || "START",
-    amount: params.get("amount") || ""
-  });
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && briefOverlay?.classList.contains("is-open")) {
+    closeBrief();
+  }
+});
+
+const params = new URLSearchParams(window.location.search);
+if (params.get("preview") === "demo") {
+  openBrief({ product: params.get("product") || "START" });
 }
 
-briefForm?.addEventListener("submit", (event) => {
+briefForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  const status = document.querySelector("[data-brief-status]");
+  const submitButton = briefForm.querySelector(".brief-submit");
 
   briefForm.querySelectorAll(".field.is-invalid").forEach((field) => field.classList.remove("is-invalid"));
 
@@ -157,32 +145,80 @@ briefForm?.addEventListener("submit", (event) => {
   }
 
   const formData = new FormData(briefForm);
-  const draft = {};
 
-  for (const [key, value] of formData.entries()) {
-    if (value instanceof File) {
-      if (!value.name) continue;
-      if (!draft.files) draft.files = [];
-      draft.files.push({ name: value.name, size: value.size, type: value.type });
-    } else if (draft[key]) {
-      draft[key] = Array.isArray(draft[key]) ? [...draft[key], value] : [draft[key], value];
-    } else {
-      draft[key] = value;
-    }
+  // Web3Forms 메일에서 읽기 쉽도록 선택값을 한글로 보냅니다.
+  const productLabels = {
+    START: "START · 39만원",
+    STANDARD: "STANDARD · 59만원",
+    UNSURE: "잘 모르겠어요 · 추천받기"
+  };
+  const goalLabels = {
+    inquiry: "문의·상담 늘리기",
+    booking: "예약 늘리기",
+    branding: "브랜드 이미지 개선",
+    information: "서비스 정보 정리",
+    renewal: "기존 홈페이지 리뉴얼",
+    other: "기타"
+  };
+
+  const productValue = formData.get("product");
+  const goalValue = formData.get("goal");
+  if (productValue && productLabels[productValue]) formData.set("관심 패키지", productLabels[productValue]);
+  if (goalValue && goalLabels[goalValue]) formData.set("원하는 결과", goalLabels[goalValue]);
+
+  // 영문 내부 필드와 별개로 메일에서 바로 읽을 수 있는 한글 항목도 추가합니다.
+  formData.set("브랜드명", formData.get("brand_name") || "");
+  formData.set("담당자 이름", formData.get("customer_name") || "");
+  formData.set("휴대폰 번호", formData.get("phone") || "");
+  formData.set("이메일", formData.get("email") || "미입력");
+  formData.set("인스타그램", formData.get("instagram") || "미입력");
+  formData.set("네이버 블로그", formData.get("blog") || "미입력");
+  formData.set("네이버 플레이스", formData.get("naver_place") || "미입력");
+  formData.set("기존 홈페이지", formData.get("website") || "미입력");
+  formData.set("추가 요청", formData.get("message") || "없음");
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.dataset.originalText = submitButton.innerHTML;
+    submitButton.innerHTML = "전송 중입니다…";
   }
+  if (status) status.textContent = "신청 내용을 안전하게 전송하고 있어요.";
 
   try {
-    localStorage.setItem("pageatelier_project_brief_draft", JSON.stringify({
-      ...draft,
-      saved_at: new Date().toISOString()
-    }));
-  } catch (error) {
-    console.warn("Could not save brief draft locally.", error);
-  }
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const result = await response.json();
 
-  // NEXT STEP:
-  // Send FormData to your server/Supabase after the backend is connected.
-  briefForm.hidden = true;
-  if (briefDone) briefDone.hidden = false;
-  briefOverlay?.scrollTo({ top: 0, behavior: "smooth" });
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Web3Forms submission failed");
+    }
+
+    try {
+      localStorage.setItem("pageatelier_free_preview_draft", JSON.stringify({
+        brand_name: formData.get("brand_name"),
+        customer_name: formData.get("customer_name"),
+        phone: formData.get("phone"),
+        product: formData.get("product"),
+        submitted_at: new Date().toISOString()
+      }));
+    } catch (error) {
+      console.warn("Could not save submission locally.", error);
+    }
+
+    briefForm.reset();
+    updatePreviewProduct("");
+    briefForm.hidden = true;
+    if (briefDone) briefDone.hidden = false;
+    briefOverlay?.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (error) {
+    console.error("Web3Forms submission error:", error);
+    if (status) status.textContent = "전송 중 오류가 발생했어요. 잠시 후 다시 시도해주세요.";
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.innerHTML = submitButton.dataset.originalText || "무료 시안 신청하기 <span>↗</span>";
+    }
+  }
 });
