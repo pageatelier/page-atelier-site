@@ -74,17 +74,20 @@ if ("IntersectionObserver" in window) {
 // Show the Kakao floating button only once the visitor has scrolled past
 // the hero (which already has its own CTA, and short viewports in in-app
 // browsers can reveal the next section right under the fold, so showing
-// the floating button there just overlaps it), and hide it again once the
-// footer scrolls into view so it doesn't sit on top of the footer content.
+// the floating button there just overlaps it), hide it again while the
+// final CTA section is in view (it has its own buttons — the floating one
+// just sits on top of its headline/buttons), and hide it once the footer
+// scrolls into view so it doesn't sit on top of the footer content.
 const kakaoFloat = document.querySelector(".kakao-float");
 const hero = document.querySelector(".hero");
+const finalCta = document.querySelector(".final");
 const footer = document.querySelector(".footer");
 
 if (kakaoFloat && "IntersectionObserver" in window) {
-  const state = { inHero: true, inFooter: false };
+  const state = { inHero: true, inFinal: false, inFooter: false };
 
   const applyKakaoVisibility = () => {
-    kakaoFloat.classList.toggle("is-hidden", state.inHero || state.inFooter);
+    kakaoFloat.classList.toggle("is-hidden", state.inHero || state.inFinal || state.inFooter);
   };
 
   if (hero) {
@@ -96,6 +99,15 @@ if (kakaoFloat && "IntersectionObserver" in window) {
     }, { threshold: 0, rootMargin: "0px 0px -20% 0px" }).observe(hero);
   } else {
     state.inHero = false;
+  }
+
+  if (finalCta) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        state.inFinal = entry.isIntersecting;
+        applyKakaoVisibility();
+      });
+    }, { threshold: 0.15 }).observe(finalCta);
   }
 
   if (footer) {

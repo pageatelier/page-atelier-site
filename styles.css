@@ -1567,7 +1567,7 @@ img{display:block;max-width:100%}
   grid-template-columns:1fr auto;
   gap:12px 56px;
   align-items:start;
-  background:var(--lime);
+  background:var(--cream);
   color:var(--ink);
 }
 .footer-brand{grid-column:1;grid-row:1}
