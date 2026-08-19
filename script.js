@@ -55,6 +55,21 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((el) => el.classList.add("is-visible"));
 }
 
+// Hide the Kakao floating button once the footer scrolls into view so it
+// doesn't sit on top of the footer content.
+const kakaoFloat = document.querySelector(".kakao-float");
+const footer = document.querySelector(".footer");
+
+if (kakaoFloat && footer && "IntersectionObserver" in window) {
+  const footerIo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      kakaoFloat.classList.toggle("is-hidden", entry.isIntersecting);
+    });
+  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
+
+  footerIo.observe(footer);
+}
+
 
 // =========================================================
 // FREE PREVIEW REQUEST
@@ -124,6 +139,14 @@ document.addEventListener("keydown", (event) => {
 const params = new URLSearchParams(window.location.search);
 if (params.get("preview") === "demo") {
   openBrief({ product: params.get("product") || "START" });
+} else if (window.location.hash === "#preview") {
+  // Someone opened a "무료 시안 받아보기" link in a new tab / visited the
+  // href directly, bypassing the click handler below. #preview is the
+  // brief overlay's own id (position:fixed, display:none until opened),
+  // so without this the browser just scrolls to a hidden element and the
+  // page looks blank. Open it the same way a real click would.
+  openBrief({});
+  history.replaceState(null, "", window.location.pathname + window.location.search);
 }
 
 briefForm?.addEventListener("submit", async (event) => {

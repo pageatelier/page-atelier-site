@@ -269,6 +269,62 @@ img{display:block;max-width:100%}
   transform:translateX(2px);
 }
 
+.kakao-float{
+  display:none;
+}
+
+@media (max-width:760px){
+  .kakao-float{
+    position:fixed;
+    left:16px;
+    right:16px;
+    bottom:16px;
+    z-index:90;
+    display:grid;
+    grid-template-columns:1fr 58px;
+    align-items:stretch;
+    min-height:58px;
+    padding:0;
+    overflow:hidden;
+    background:var(--orange);
+    border:1px solid var(--ink);
+    border-radius:0;
+    font-size:13px;
+    font-weight:740;
+    color:#fff;
+    transition:transform .22s ease,opacity .22s ease;
+  }
+  .kakao-float-label{
+    display:flex;
+    align-items:center;
+    padding:0 18px;
+    white-space:nowrap;
+  }
+  .kakao-float-arrow{
+    display:grid;
+    place-items:center;
+    background:var(--lime);
+    color:var(--ink);
+    border-left:1px solid var(--ink);
+    font-size:19px;
+  }
+  .kakao-float-arrow-icon{
+    display:inline-block;
+    transition:transform .22s ease;
+  }
+  .kakao-float:active{
+    transform:translateY(-1px);
+  }
+  .kakao-float:active .kakao-float-arrow-icon{
+    transform:translateX(2px);
+  }
+  .kakao-float.is-hidden{
+    opacity:0;
+    transform:translateY(12px);
+    pointer-events:none;
+  }
+}
+
 .menu-toggle{display:none}
 
 .hero{
@@ -721,6 +777,8 @@ img{display:block;max-width:100%}
 .process{
   position:relative;
   overflow:hidden;
+  padding-top:90px;
+  padding-bottom:90px;
   background:#EFE8FB;
 }
 .process::after{
@@ -753,7 +811,7 @@ img{display:block;max-width:100%}
   -webkit-box-decoration-break:clone;
 }
 .process-track{
-  margin-top:90px;
+  margin-top:62px;
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:24px;
@@ -1279,7 +1337,7 @@ img{display:block;max-width:100%}
     align-items:center;
     justify-content:space-between;
     padding:13px 0;
-    font-size:clamp(40px,13vw,62px);
+    font-size:clamp(36px,11.7vw,56px);
     line-height:.9;
     font-weight:760;
     letter-spacing:-.06em;
@@ -1690,7 +1748,7 @@ img{display:block;max-width:100%}
 }
 
 .nav{
-  font-size:11px;
+  font-size:22px;
   line-height:1.4;
 }
 
@@ -1948,7 +2006,6 @@ body.brief-lock{overflow:hidden}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-bottom:1px solid var(--line);
 }
 .brief-brand{
   font-family:"Bowlby One SC","Arial Black",sans-serif;
