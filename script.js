@@ -55,19 +55,43 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((el) => el.classList.add("is-visible"));
 }
 
-// Hide the Kakao floating button once the footer scrolls into view so it
-// doesn't sit on top of the footer content.
+// Show the Kakao floating button only once the visitor has scrolled past
+// the hero (which already has its own CTA, and short viewports in in-app
+// browsers can reveal the next section right under the fold, so showing
+// the floating button there just overlaps it), and hide it again once the
+// footer scrolls into view so it doesn't sit on top of the footer content.
 const kakaoFloat = document.querySelector(".kakao-float");
+const hero = document.querySelector(".hero");
 const footer = document.querySelector(".footer");
 
-if (kakaoFloat && footer && "IntersectionObserver" in window) {
-  const footerIo = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      kakaoFloat.classList.toggle("is-hidden", entry.isIntersecting);
-    });
-  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
+if (kakaoFloat && "IntersectionObserver" in window) {
+  const state = { inHero: true, inFooter: false };
 
-  footerIo.observe(footer);
+  const applyKakaoVisibility = () => {
+    kakaoFloat.classList.toggle("is-hidden", state.inHero || state.inFooter);
+  };
+
+  if (hero) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        state.inHero = entry.isIntersecting;
+        applyKakaoVisibility();
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -20% 0px" }).observe(hero);
+  } else {
+    state.inHero = false;
+  }
+
+  if (footer) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        state.inFooter = entry.isIntersecting;
+        applyKakaoVisibility();
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -10% 0px" }).observe(footer);
+  }
+
+  applyKakaoVisibility();
 }
 
 
@@ -148,6 +172,17 @@ if (params.get("preview") === "demo") {
   openBrief({});
   history.replaceState(null, "", window.location.pathname + window.location.search);
 }
+
+// Safety net: if anything ever links to #preview without the click handler
+// above catching it (missing data-preview, browser back/forward, etc.),
+// opening #preview via a same-page hash change doesn't reload the page —
+// so the load-time check above won't see it. Watch for it directly instead.
+window.addEventListener("hashchange", () => {
+  if (window.location.hash === "#preview") {
+    openBrief({});
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+});
 
 briefForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
