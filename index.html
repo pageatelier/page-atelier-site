@@ -369,8 +369,8 @@
             <li><span>06</span> 수정 2회</li>
           </ul>
 
-          <a class="plan-link" href="https://www.instagram.com/pageatelier.kr/" target="_blank" rel="noreferrer">
-            START 문의하기 <span>↗</span>
+          <a class="plan-link checkout-link" href="#" data-checkout data-product="START" data-amount="390000">
+            START 결제하기 <span>↗</span>
           </a>
         </article>
 
@@ -394,10 +394,15 @@
             <li><span>07</span> 수정 3회</li>
           </ul>
 
-          <a class="plan-link plan-link-filled" href="https://www.instagram.com/pageatelier.kr/" target="_blank" rel="noreferrer">
-            STANDARD 문의하기 <span>↗</span>
+          <a class="plan-link plan-link-filled checkout-link" href="#" data-checkout data-product="STANDARD" data-amount="590000">
+            STANDARD 결제하기 <span>↗</span>
           </a>
         </article>
+      </div>
+
+      <div class="purchase-note reveal">
+        <strong>결제 후에는 2분이면 충분해요.</strong>
+        <p>인스타그램·블로그·네이버 플레이스 등 운영 중인 링크만 남겨주시면 나머지 구성은 PAGE ATELIER가 정리합니다.</p>
       </div>
     </section>
 
@@ -420,6 +425,176 @@
       </div>
     </section>
   </main>
+
+  <section class="brief-overlay" data-brief-overlay aria-hidden="true">
+    <div class="brief-shell">
+      <div class="brief-topbar">
+        <a class="brief-brand" href="./" aria-label="PAGE ATELIER 홈">PAGE ATELIER</a>
+        <button class="brief-close" type="button" data-brief-close aria-label="자료 입력 화면 닫기">닫기 ×</button>
+      </div>
+
+      <div class="brief-layout">
+        <aside class="brief-intro">
+          <p class="brief-kicker">PAYMENT COMPLETE</p>
+          <h2>결제가<br>완료되었습니다.</h2>
+          <p class="brief-lead">이제 제작에 필요한 정보만 알려주세요. 자료가 많지 않아도 괜찮아요.</p>
+
+          <div class="brief-order">
+            <span>선택 상품</span>
+            <strong data-brief-product>랜딩페이지</strong>
+            <small data-brief-order>ORDER ID —</small>
+          </div>
+
+          <div class="brief-help">
+            <strong>약 2분이면 완료됩니다.</strong>
+            <p>기존 SNS와 공개된 브랜드 정보를 바탕으로 필요한 내용을 찾아 정리해드려요.</p>
+          </div>
+        </aside>
+
+        <div class="brief-form-wrap">
+          <form class="brief-form" data-brief-form novalidate>
+            <input type="hidden" name="order_id" data-order-id>
+            <input type="hidden" name="product" data-order-product>
+            <input type="hidden" name="amount" data-order-amount>
+
+            <div class="brief-section">
+              <div class="brief-section-head">
+                <span>01</span>
+                <div>
+                  <h3>기본 정보</h3>
+                  <p>제작과 연락에 필요한 최소 정보예요.</p>
+                </div>
+              </div>
+
+              <label class="field field-full">
+                <span>브랜드명 <b>*</b></span>
+                <input type="text" name="brand_name" autocomplete="organization" placeholder="예: 허밍 필라테스" required>
+              </label>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>담당자 이름 <b>*</b></span>
+                  <input type="text" name="customer_name" autocomplete="name" placeholder="이름" required>
+                </label>
+                <label class="field">
+                  <span>휴대폰 번호 <b>*</b></span>
+                  <input type="tel" name="phone" autocomplete="tel" placeholder="010-0000-0000" required>
+                </label>
+              </div>
+
+              <label class="field field-full">
+                <span>이메일 <b>*</b></span>
+                <input type="email" name="email" autocomplete="email" placeholder="hello@example.com" required>
+              </label>
+            </div>
+
+            <div class="brief-section">
+              <div class="brief-section-head">
+                <span>02</span>
+                <div>
+                  <h3>현재 운영 중인 채널</h3>
+                  <p>있는 것만 입력해 주세요.</p>
+                </div>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>인스타그램</span>
+                  <input type="url" name="instagram" placeholder="https://instagram.com/...">
+                </label>
+                <label class="field">
+                  <span>네이버 블로그</span>
+                  <input type="url" name="blog" placeholder="https://blog.naver.com/...">
+                </label>
+                <label class="field">
+                  <span>네이버 플레이스</span>
+                  <input type="url" name="naver_place" placeholder="https://naver.me/...">
+                </label>
+                <label class="field">
+                  <span>기존 홈페이지</span>
+                  <input type="url" name="website" placeholder="https://...">
+                </label>
+              </div>
+            </div>
+
+            <div class="brief-section">
+              <div class="brief-section-head">
+                <span>03</span>
+                <div>
+                  <h3>고객이 하길 원하는 행동</h3>
+                  <p>홈페이지에서 가장 중요하게 연결할 행동 하나를 골라주세요.</p>
+                </div>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>주요 문의·예약 방식 <b>*</b></span>
+                  <select name="conversion_type" required>
+                    <option value="">선택해 주세요</option>
+                    <option value="kakao">카카오톡 상담</option>
+                    <option value="phone">전화 문의</option>
+                    <option value="naver-booking">네이버 예약</option>
+                    <option value="instagram-dm">인스타그램 DM</option>
+                    <option value="form">상담 신청</option>
+                    <option value="purchase">상품 구매</option>
+                    <option value="other">기타</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>연결할 링크 또는 연락처 <b>*</b></span>
+                  <input type="text" name="conversion_url" placeholder="카카오 채널 링크 / 전화번호 / 예약 링크" required>
+                </label>
+              </div>
+            </div>
+
+            <div class="brief-section">
+              <div class="brief-section-head">
+                <span>04</span>
+                <div>
+                  <h3>추가 자료</h3>
+                  <p>없어도 괜찮습니다.</p>
+                </div>
+              </div>
+
+              <label class="field field-full field-file">
+                <span>로고 · 사진 · 메뉴판 · 소개서</span>
+                <input type="file" name="files" accept="image/*,.pdf,.doc,.docx,.ppt,.pptx" multiple>
+                <em>파일 선택 <small>여러 개 선택 가능</small></em>
+              </label>
+
+              <label class="field field-full">
+                <span>꼭 넣고 싶은 내용</span>
+                <textarea name="message" rows="5" placeholder="예: 10년 경력을 강조해주세요 / 주차 가능 내용을 꼭 넣어주세요."></textarea>
+              </label>
+            </div>
+
+            <div class="brief-agreements">
+              <label class="check-row">
+                <input type="checkbox" name="delegate" checked>
+                <span>나머지 구성과 디자인은 PAGE ATELIER에 맡길게요.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" name="privacy" required>
+                <span><b>[필수]</b> 홈페이지 제작 및 고객 연락을 위한 개인정보 수집·이용에 동의합니다.</span>
+              </label>
+            </div>
+
+            <button class="brief-submit" type="submit">
+              제작 자료 보내기 <span>↗</span>
+            </button>
+            <p class="brief-submit-note" data-brief-status>다음 단계에서 저장 서버를 연결하면 실제 접수가 완료되도록 세팅됩니다.</p>
+          </form>
+
+          <div class="brief-done" data-brief-done hidden>
+            <p>SUBMITTED</p>
+            <h3>자료가<br>준비되었습니다.</h3>
+            <span>입력 내용은 이 브라우저에 임시 저장했어요. 다음 단계에서 서버 저장과 알림을 연결하면 실제 접수까지 완성됩니다.</span>
+            <button type="button" data-brief-close>홈페이지로 돌아가기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-brand">
