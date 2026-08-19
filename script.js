@@ -32,6 +32,10 @@ nav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => setMenu(false));
 });
 
+document.querySelector(".wordmark")?.addEventListener("click", () => {
+  if (header?.classList.contains("menu-open")) setMenu(false);
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && header?.classList.contains("menu-open")) {
     setMenu(false);
@@ -104,6 +108,25 @@ const briefForm = document.querySelector("[data-brief-form]");
 const briefDone = document.querySelector("[data-brief-done]");
 const briefProduct = document.querySelector("[data-brief-product]");
 const productSelect = document.querySelector("[data-product-select]");
+const introKicker = document.querySelector("[data-brief-intro-kicker]");
+const introTitle = document.querySelector("[data-brief-intro-title]");
+const introLead = document.querySelector("[data-brief-intro-lead]");
+const introHelp = document.querySelector("[data-brief-intro-help]");
+
+const INTRO_DEFAULT = {
+  kicker: "FREE PREVIEW REQUEST",
+  title: "무료 시안 <br>신청하기",
+  lead: "브랜드를 확인할 수 있는 링크만 남겨주세요. <br>자료가 많지 않아도 괜찮아요."
+};
+
+function setIntroDone(done) {
+  if (introKicker) introKicker.textContent = done ? "REQUEST RECEIVED" : INTRO_DEFAULT.kicker;
+  if (introTitle) introTitle.innerHTML = done ? "THANK <br>YOU." : INTRO_DEFAULT.title;
+  if (introLead) introLead.innerHTML = done
+    ? "신청해주셔서 감사합니다."
+    : INTRO_DEFAULT.lead;
+  if (introHelp) introHelp.hidden = done;
+}
 
 const PRODUCTS = {
   START: "START · 39만원",
@@ -129,6 +152,7 @@ function openBrief({ product = "" } = {}) {
 
   briefForm?.removeAttribute("hidden");
   if (briefDone) briefDone.hidden = true;
+  setIntroDone(false);
   briefOverlay.scrollTop = 0;
 }
 
@@ -269,6 +293,7 @@ briefForm?.addEventListener("submit", async (event) => {
     updatePreviewProduct("");
     briefForm.hidden = true;
     if (briefDone) briefDone.hidden = false;
+    setIntroDone(true);
     briefOverlay?.scrollTo({ top: 0, behavior: "smooth" });
   } catch (error) {
     console.error("Web3Forms submission error:", error);
