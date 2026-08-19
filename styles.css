@@ -586,10 +586,10 @@ img{display:block;max-width:100%}
 }
 .why-item{
   display:grid;
-  grid-template-columns:60px 1.05fr 1fr;
+  grid-template-columns:60px 1fr;
   gap:24px;
   padding:27px 0;
-  align-items:start;
+  align-items:center;
 }
 .why-no{
   color:var(--lavender-deep);
@@ -1868,6 +1868,7 @@ img{display:block;max-width:100%}
 .why-item h3{
   font-size:20px;
   line-height:1.5;
+  white-space:nowrap;
 }
 
 .why-item p{
@@ -1999,6 +2000,7 @@ img{display:block;max-width:100%}
   .why-item h3{
     font-size:19px;
     line-height:1.5;
+    white-space:normal;
   }
 
   .why-item p{
