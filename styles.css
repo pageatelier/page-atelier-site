@@ -1253,6 +1253,10 @@ img{display:block;max-width:100%}
 ======================================================= */
 @media (max-width:760px){
   body.menu-lock{
+    position:fixed;
+    left:0;
+    right:0;
+    width:100%;
     overflow:hidden;
   }
 
@@ -1781,7 +1785,14 @@ img{display:block;max-width:100%}
 
   .step{
     max-width:78%;
+    transition-delay:calc(var(--step-index, 0) * .08s);
   }
+
+  .step:nth-child(2){--step-index:1}
+  .step:nth-child(3){--step-index:2}
+  .step:nth-child(4){--step-index:3}
+  .step:nth-child(5){--step-index:4}
+  .step:nth-child(6){--step-index:5}
 
   .step:nth-child(odd){
     margin-right:auto;

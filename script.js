@@ -8,15 +8,27 @@ function updateHeader() {
   }
 }
 
+let menuLockScrollY = 0;
+
 function setMenu(open) {
   if (!header || !toggle) return;
 
   header.classList.toggle("menu-open", open);
-  document.body.classList.toggle("menu-lock", open);
   toggle.setAttribute("aria-expanded", String(open));
   toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
 
-  if (!open) updateHeader();
+  // overflow:hidden alone doesn't stop iOS Safari's rubber-band scroll —
+  // pinning the body with position:fixed at its current scroll offset does.
+  if (open) {
+    menuLockScrollY = window.scrollY;
+    document.body.style.top = `-${menuLockScrollY}px`;
+    document.body.classList.add("menu-lock");
+  } else {
+    document.body.classList.remove("menu-lock");
+    document.body.style.top = "";
+    window.scrollTo(0, menuLockScrollY);
+    updateHeader();
+  }
 }
 
 updateHeader();
