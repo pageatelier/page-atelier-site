@@ -4,7 +4,7 @@ const nav = document.querySelector("[data-nav]");
 
 function updateHeader() {
   if (!header?.classList.contains("menu-open")) {
-    header?.classList.toggle("scrolled", window.scrollY > 16);
+    header?.classList.toggle("scrolled", window.scrollY > 80);
   }
 }
 
