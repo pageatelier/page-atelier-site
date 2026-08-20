@@ -26,7 +26,7 @@ function setMenu(open) {
   } else {
     document.body.classList.remove("menu-lock");
     document.body.style.top = "";
-    window.scrollTo(0, menuLockScrollY);
+    window.scrollTo({ top: menuLockScrollY, left: 0, behavior: "auto" });
     updateHeader();
   }
 }
