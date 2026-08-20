@@ -1385,7 +1385,7 @@ img{display:block;max-width:100%}
     min-height:72px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
     padding:13px 0;
     font-size:clamp(29px,9.36vw,45px);
     line-height:.9;
@@ -1395,34 +1395,11 @@ img{display:block;max-width:100%}
   }
 
   .header.menu-open .nav a::before{
-    content:attr(data-index);
-    position:static;
-    min-width:0;
-    margin-right:16px;
-    padding:0;
-    background:none;
-    color:rgba(17,17,17,.48);
-    font-size:9px;
-    line-height:1;
-    font-weight:760;
-    letter-spacing:.12em;
-    border-radius:0;
-    opacity:1;
-    transform:none;
+    display:none;
   }
 
   .header.menu-open .nav a::after{
-    content:"↗";
-    position:static;
-    width:auto;
-    height:auto;
-    margin-left:auto;
-    padding-left:12px;
-    background:none;
-    color:var(--ink);
-    font-size:18px;
-    line-height:1;
-    transform:none;
+    display:none;
   }
 
   .header.menu-open .nav a:hover{
