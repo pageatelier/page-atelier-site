@@ -1299,10 +1299,6 @@ img{display:block;max-width:100%}
 ======================================================= */
 @media (max-width:760px){
   body.menu-lock{
-    position:fixed;
-    left:0;
-    right:0;
-    width:100%;
     overflow:hidden;
   }
 

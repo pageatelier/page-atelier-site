@@ -8,7 +8,13 @@ function updateHeader() {
   }
 }
 
-let menuLockScrollY = 0;
+// overflow:hidden alone doesn't stop iOS Safari's rubber-band scroll, so we
+// also block touchmove while the menu is open. This never moves the actual
+// scroll position, so there's nothing to restore (and no jump) on close —
+// unlike the old position:fixed + scrollTo trick.
+function preventTouchMove(event) {
+  event.preventDefault();
+}
 
 function setMenu(open) {
   if (!header || !toggle) return;
@@ -17,19 +23,12 @@ function setMenu(open) {
   toggle.setAttribute("aria-expanded", String(open));
   toggle.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
 
-  // overflow:hidden alone doesn't stop iOS Safari's rubber-band scroll —
-  // pinning the body with position:fixed at its current scroll offset does.
+  document.body.classList.toggle("menu-lock", open);
+
   if (open) {
-    menuLockScrollY = window.scrollY;
-    document.body.style.top = `-${menuLockScrollY}px`;
-    document.body.classList.add("menu-lock");
+    document.addEventListener("touchmove", preventTouchMove, { passive: false });
   } else {
-    document.body.classList.remove("menu-lock");
-    document.body.style.top = "";
-    // Setting scrollTop directly is always instant, unlike scrollTo(), which
-    // some mobile browsers still animate even when behavior:"auto" is passed.
-    document.documentElement.scrollTop = menuLockScrollY;
-    document.body.scrollTop = menuLockScrollY;
+    document.removeEventListener("touchmove", preventTouchMove);
     updateHeader();
   }
 }
