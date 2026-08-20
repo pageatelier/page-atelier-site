@@ -94,7 +94,7 @@
 .content-toc a:hover{color:var(--pa-ink)}
 .article-body{min-width:0}
 .article-body section{scroll-margin-top:110px;margin:0 0 70px}
-.article-body h2{margin:0 0 24px;font-size:clamp(30px,4vw,46px);line-height:1.18;letter-spacing:-.05em;font-weight:650}
+.article-body h2{margin:0 0 24px;font-size:clamp(26px,3.4vw,39px);line-height:1.18;letter-spacing:-.05em;font-weight:650}
 .article-body h3{margin:34px 0 13px;font-size:21px;line-height:1.35;letter-spacing:-.03em}
 .article-body p{margin:0 0 18px;color:#393632;font-size:16px;line-height:1.9;letter-spacing:-.018em}
 .article-body ul,.article-body ol{margin:20px 0 24px;padding-left:22px}
@@ -123,7 +123,7 @@
 .faq-item h3{margin:0 0 10px;font-size:18px}
 .faq-item p{margin:0;font-size:14px;line-height:1.8;color:var(--pa-muted)}
 .related{padding:70px 0;background:#101010;color:#f7f3eb}
-.related h2{margin:0 0 28px;font-size:clamp(34px,4.5vw,54px);letter-spacing:-.055em}
+.related h2{margin:0 0 28px;font-size:clamp(29px,3.8vw,46px);letter-spacing:-.055em}
 .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
 .related-card{min-height:180px;padding:24px;background:#101010;display:flex;flex-direction:column}
 .related-card small{color:var(--pa-lime);font-size:10px;letter-spacing:.12em;font-weight:750}
@@ -143,7 +143,7 @@
 .hub-card{min-height:270px;padding:28px;background:var(--pa-paper);border:1px solid var(--pa-line);display:flex;flex-direction:column;transition:transform .2s ease}
 .hub-card:hover{transform:translateY(-3px)}
 .hub-card small{font-size:10px;letter-spacing:.12em;color:var(--pa-lavender-deep);font-weight:760}
-.hub-card h2{margin:22px 0 13px;font-size:28px;line-height:1.25;letter-spacing:-.045em}
+.hub-card h2{margin:22px 0 13px;font-size:24px;line-height:1.25;letter-spacing:-.045em}
 .hub-card p{margin:0;color:var(--pa-muted);font-size:14px;line-height:1.75}
 .hub-card span{margin-top:auto;padding-top:22px;font-size:12px;font-weight:760}
 .case-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pa-line);border:1px solid var(--pa-line);margin:26px 0 40px}
@@ -156,7 +156,7 @@
   .content-header{grid-template-columns:1fr auto}.content-nav{display:none}.content-hero,.seo-intro{grid-template-columns:1fr;gap:34px}.content-layout{grid-template-columns:1fr}.content-toc{position:static;display:none}.related-grid{grid-template-columns:1fr}.resource-grid{grid-template-columns:1fr}.resource-card + .resource-card{padding-left:0;border-left:0}.hub-grid{grid-template-columns:1fr}.content-cta__inner{align-items:flex-start;flex-direction:column}.case-facts{grid-template-columns:1fr}.resource-head{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:760px){
-  .content-header{height:68px;padding:0 20px}.content-brand{font-size:17px}.content-header__cta{padding:10px 11px;font-size:10px}.content-shell{width:min(100% - 36px,1180px)}.breadcrumb{padding-top:20px}.content-hero{padding:54px 0 48px}.content-hero h1{font-size:clamp(42px,12vw,62px);line-height:1.05}.content-answer{font-size:18px}.content-layout{padding:54px 0 80px}.article-body section{margin-bottom:54px}.article-body h2{font-size:31px}.article-body p{font-size:15px;line-height:1.85}.info-grid{grid-template-columns:1fr}.related{padding:55px 0}.content-cta{padding:66px 0}.content-cta h2{font-size:44px}.content-footer{grid-template-columns:1fr}.content-footer__links{flex-wrap:wrap}.seo-intro,.resource-section{padding-left:20px!important;padding-right:20px!important}.resource-card{min-height:200px}.hub-grid{padding:45px 0 80px}.hub-card{min-height:230px}
+  .content-header{height:68px;padding:0 20px}.content-brand{font-size:17px}.content-header__cta{padding:10px 11px;font-size:10px}.content-shell{width:min(100% - 36px,1180px)}.breadcrumb{padding-top:20px}.content-hero{padding:54px 0 48px}.content-hero h1{font-size:clamp(34px,9.6vw,50px);line-height:1.05}.content-answer{font-size:18px}.content-layout{padding:54px 0 80px}.article-body section{margin-bottom:54px}.article-body h2{font-size:26px}.article-body p{font-size:15px;line-height:1.85}.info-grid{grid-template-columns:1fr}.related{padding:55px 0}.content-cta{padding:66px 0}.content-cta h2{font-size:44px}.content-footer{grid-template-columns:1fr}.content-footer__links{flex-wrap:wrap}.seo-intro,.resource-section{padding-left:20px!important;padding-right:20px!important}.resource-card{min-height:200px}.hub-grid{padding:45px 0 80px}.hub-card{min-height:230px}
 }
 
 
