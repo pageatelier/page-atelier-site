@@ -26,7 +26,10 @@ function setMenu(open) {
   } else {
     document.body.classList.remove("menu-lock");
     document.body.style.top = "";
-    window.scrollTo({ top: menuLockScrollY, left: 0, behavior: "auto" });
+    // Setting scrollTop directly is always instant, unlike scrollTo(), which
+    // some mobile browsers still animate even when behavior:"auto" is passed.
+    document.documentElement.scrollTop = menuLockScrollY;
+    document.body.scrollTop = menuLockScrollY;
     updateHeader();
   }
 }
