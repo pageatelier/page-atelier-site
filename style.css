@@ -1096,3 +1096,12 @@ em { font-weight: 400; }
 @media (max-width: 800px) {
   .project-visual { aspect-ratio: 1.64 / 1; }
 }
+
+
+/* Service showcase without a photo panel */
+.service-showcase-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.service-content { width: 100%; max-width: 1180px; margin: auto; }
+@media (max-width: 800px) {
+  .service-showcase-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .service-content { max-width: none; }
+}

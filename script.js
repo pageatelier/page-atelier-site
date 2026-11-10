@@ -1,11 +1,10 @@
 const serviceData = [
-  { image: 'assets/services/wellness-brand-social.webp', alt: '웰니스 브랜드의 인스타그램과 비주얼 아이덴티티 시안', copy: '컬러와 분위기, 다른 스튜디오와 구별되는 강점을 정리합니다.' },
-  { image: 'assets/services/wellness-brand-identity.webp', alt: '웰니스 브랜드 아이덴티티와 모바일 웹사이트 목업', copy: '보여줄 정보와 페이지 흐름을 정리합니다.' },
-  { image: 'assets/services/mobile-adaptive.webp', alt: '휴대폰 화면으로 구성한 요가와 스트레칭 웹사이트', copy: '카카오톡·전화·예약 링크를 방문자가 찾기 쉽게 연결합니다.' },
-  { image: 'assets/services/studio-diseno-websites.webp', alt: '웰니스 스튜디오 웹사이트의 모바일 화면 구성', copy: '검색 도구 등록과 홈페이지 기본 SEO 설정을 지원합니다.' }
+  { copy: '컬러와 분위기, 다른 스튜디오와 구별되는 강점을 정리합니다.' },
+  { copy: '보여줄 정보와 페이지 흐름을 정리합니다.' },
+  { copy: '카카오톡·전화·예약 링크를 방문자가 찾기 쉽게 연결합니다.' },
+  { copy: '검색 도구 등록과 홈페이지 기본 SEO 설정을 지원합니다.' }
 ];
 const buttons = [...document.querySelectorAll('[data-service]')];
-const image = document.querySelector('#service-image');
 const copy = document.querySelector('#service-copy');
 const count = document.querySelector('#service-count');
 function selectService(index) {
@@ -15,8 +14,6 @@ function selectService(index) {
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-pressed', String(active));
   });
-  image.src = item.image;
-  image.alt = item.alt;
   copy.textContent = item.copy;
   count.textContent = `0${index + 1} / 04　페이지 아뜰리에`;
 }
