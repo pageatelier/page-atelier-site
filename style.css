@@ -1105,3 +1105,14 @@ em { font-weight: 400; }
   .service-showcase-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .service-content { max-width: none; }
 }
+
+
+/* Make the services showcase static instead of scroll-pinned */
+.service-showcase { height: auto; margin-bottom: clamp(48px,6vw,88px); }
+.service-showcase-stage { position: relative; top: auto; min-height: 0; overflow: visible; }
+.service-showcase-grid { flex: none; padding: clamp(28px,4vw,56px) 0 0; }
+@media (max-width: 800px) {
+  .service-showcase { height: auto; margin-bottom: 48px; }
+  .service-showcase-stage { min-height: 0; }
+  .service-showcase-grid { padding: 28px 0 0; }
+}
